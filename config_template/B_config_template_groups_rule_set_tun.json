@@ -181,7 +181,7 @@
       "tag":"auto-com",
       "type":"urltest",
       "outbounds":[
-"direct",
+
         "{all}"
       ],
       "filter":[
