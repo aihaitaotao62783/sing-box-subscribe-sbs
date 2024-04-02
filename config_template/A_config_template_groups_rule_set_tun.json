@@ -98,6 +98,7 @@
         "China",
         "direct",
 "auto-cn",
+        "Global",
        "{all}",
 "auto-com"
       ],
@@ -128,8 +129,7 @@
        "direct",   
        "China",
 "auto-cn",
-"auto-com",  
-       "proxy"
+"auto-com"
       ],
       "default": "auto-com"
     },
