@@ -182,7 +182,7 @@
         "{all}"
       ],
       "filter":[
-       {"action":"exclude","keywords":["故障|剩余|距离|套餐|无网|官网|tg|翻墙|VIP|校园|CN-|内蒙|浙江|游戏节点"]}
+       {"action":"exclude","keywords":["故障|剩余|距离|套餐|无网|官网|tg|翻墙|VIP|校园|CN-|内蒙|浙江|游戏节点|辽宁"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "60m",
