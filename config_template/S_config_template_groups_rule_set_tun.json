@@ -96,11 +96,16 @@
       "tag":"Proxy",
       "type":"selector",
       "outbounds":[
-      
+        "China",
         "direct",
+"auto-cn",
        "{all}",
 "auto-com"
-      ]
+      ],
+      "filter":[
+        {"action":"include","keywords":["最新官网"]}
+      ],
+      "default": "auto-com"
     },
    
    
@@ -122,11 +127,26 @@
       "type":"selector",
       "outbounds":[ 
        "direct",   
-        "Proxy"
-
-      ]
+       "China",
+"auto-cn",
+        "Proxy",
+"auto-com"
+      ],
+      "default": "auto-com"
     },
-  
+    {
+      "tag":"China",
+      "type":"selector",
+      "outbounds":[
+"direct",   
+         "auto-cn", 
+     "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["联通|电信|移动"]}
+      ],
+      "default": "auto-cn"
+    },
     {
       "tag":"AdBlock",
       "type":"selector",
@@ -141,7 +161,20 @@
    
   
    
- 
+    {
+      "tag":"auto-cn",
+      "type":"urltest",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["联通|电信|移动"]}
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "60m",
+      "tolerance": 50,
+"idle_timeout": "120m"
+    },
 {
       "tag":"auto-com",
       "type":"urltest",
@@ -233,8 +266,11 @@
       {
         "ip_is_private": true,
         "outbound": "direct"
+      },
+      {
+        "rule_set": ["geoip-cn", "geosite-cn"],
+        "outbound": "China"
       }
-    
     ],
     "rule_set": [
     
