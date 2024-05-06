@@ -182,7 +182,7 @@
         "{all}"
       ],
       "filter":[
-       {"action":"include","keywords":["HK|hk|香港|港|HongKong|JP|jp|日本|日|Japan"]}
+       {"action":"include","keywords":["HK|hk|香港|港|HongKong|JP|jp|日本|San|日|Japan"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "60m",
