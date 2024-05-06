@@ -62,7 +62,7 @@
       }
     ],
     "final": "localDns",
-    "strategy": "ipv4_only"
+    "strategy": "prefer_ipv6"
   },
   "inbounds": [
     {
@@ -103,7 +103,7 @@
 "auto-com"
       ],
       "filter":[
-        {"action":"include","keywords":["当前Host"]}
+        {"action":"include","keywords":["当前Host|San"]}
       ],
       "default": "auto-com"
     },
