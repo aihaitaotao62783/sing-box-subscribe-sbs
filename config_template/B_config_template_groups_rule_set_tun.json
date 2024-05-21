@@ -104,7 +104,7 @@
 "auto-com"
       ],
       "filter":[
-        {"action":"include","keywords":["流量"]}
+        {"action":"include","keywords":["流量|San"]}
       ],
       "default": "auto-com"
     },
