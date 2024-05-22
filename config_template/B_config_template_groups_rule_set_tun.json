@@ -173,9 +173,9 @@
         {"action":"include","keywords":["CN-|联通|移动|电信"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "60m",
+      "interval": "720m",
       "tolerance": 50,
-"idle_timeout": "120m"
+"idle_timeout": "1440m"
     },
 {
       "tag":"auto-com",
@@ -188,9 +188,9 @@
        {"action":"include","keywords":["HK|TW|🇸🇬|SG|Singapore|JP|US|Kr|UK|Korea"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "60m",
+      "interval": "720m",
       "tolerance": 50,
-"idle_timeout": "120m"
+"idle_timeout": "1440m"
     }, 
 {
       "tag":"auto-net",
@@ -203,9 +203,9 @@
        {"action":"include","keywords":["隧道|流量"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "60m",
+      "interval": "720m",
       "tolerance": 50,
-"idle_timeout": "120m"
+"idle_timeout": "1440m"
     },
 
     {
