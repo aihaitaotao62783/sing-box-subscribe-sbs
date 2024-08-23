@@ -201,7 +201,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["北京|河南|湖北|国内"]}
+        {"action":"include","keywords":["北京|河南|移动|国内|湖北"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "720m",
