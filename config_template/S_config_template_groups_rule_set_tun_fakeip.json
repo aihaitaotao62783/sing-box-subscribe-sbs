@@ -176,7 +176,7 @@
      "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["联通|电信|移动|国内|CN"]}
+        {"action":"include","keywords":["联通|河南|北京|国内|湖北"]}
       ],
       "default": "auto-cn"
     },
