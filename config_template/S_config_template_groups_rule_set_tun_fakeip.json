@@ -204,9 +204,9 @@
         {"action":"include","keywords":["北京|河南|移动|国内|湖北"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "720m",
+      "interval": "60m",
       "tolerance": 50,
-"idle_timeout": "1440m"
+"idle_timeout": "120m"
     },
 {
       "tag":"auto-com",
@@ -218,9 +218,9 @@
        {"action":"include","keywords":["🇭🇰|HK|hk|香港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "720m",
+      "interval": "60m",
       "tolerance": 50,
-"idle_timeout": "1440m"
+"idle_timeout": "120m"
     }, 
 
     {
