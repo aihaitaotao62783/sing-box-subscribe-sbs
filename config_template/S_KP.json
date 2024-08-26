@@ -194,7 +194,12 @@
        "China",
 "auto-cn",
         "Proxy",
+         "Googles",
+       "{all}",
 "auto-com"
+      ],
+      "filter":[
+        {"action":"include","keywords":["香港|日本|新加坡|韩国|IPLC"]}
       ],
       "default": "auto-com"
     },
