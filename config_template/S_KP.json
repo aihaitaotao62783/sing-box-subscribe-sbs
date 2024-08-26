@@ -141,20 +141,17 @@
       ],
       "default": "auto-com"
     },
-   {
-      "tag":"Googles",
+
+{
+      "tag":"AdBlock",
       "type":"selector",
       "outbounds":[
-       "{all}",
-"auto-com"
-      ],
-      "filter":[
-        {"action":"include","keywords":["香港|日本|新加坡|韩国|IPLC"]}
-      ],
-      "default": "auto-com"
+        "block",
+        "direct"
+      ]
     },
-   
-   {
+
+  {
       "tag":"Goverment",
       "type":"selector",
       "outbounds":[ 
@@ -176,6 +173,38 @@
       "default": "direct"
     },
    
+  {
+      "tag":"China",
+      "type":"selector",
+      "outbounds":[
+"direct",   
+         "auto-cn", 
+     "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["联通|移动|电信|国内|CN"]}
+      ],
+      "default": "auto-cn"
+    },
+    
+
+
+
+
+   {
+      "tag":"Googles",
+      "type":"selector",
+      "outbounds":[
+       "{all}",
+"auto-com"
+      ],
+      "filter":[
+        {"action":"include","keywords":["香港|日本|新加坡|韩国|IPLC"]}
+      ],
+      "default": "auto-com"
+    },
+   
+ 
  
     
  
@@ -200,27 +229,7 @@
       ],
       "default": "auto-com"
     },
-    {
-      "tag":"China",
-      "type":"selector",
-      "outbounds":[
-"direct",   
-         "auto-cn", 
-     "{all}"
-      ],
-      "filter":[
-        {"action":"include","keywords":["联通|移动|电信|国内|CN"]}
-      ],
-      "default": "auto-cn"
-    },
-    {
-      "tag":"AdBlock",
-      "type":"selector",
-      "outbounds":[
-        "block",
-        "direct"
-      ]
-    },
+  
  
  
    
@@ -329,15 +338,21 @@
         "outbound": "Bank"
       },
      
-     
+        {
+        "rule_set": ["geoip-cn", "geosite-cn"],
+        "outbound": "China"
+      },
+
+{
+        "rule_set": ["geoip-google", "geosite-google"],
+        "outbound": "Googles"
+      },
+
       {
         "rule_set": "geosite-geolocation-!cn",
         "outbound": "Global"
       },
-   {
-        "rule_set": ["geoip-google", "geosite-google"],
-        "outbound": "Googles"
-      },
+   
       {
         "rule_set": "geosite-private",
         "outbound": "direct"
@@ -345,11 +360,8 @@
       {
         "ip_is_private": true,
         "outbound": "direct"
-      },
-      {
-        "rule_set": ["geoip-cn", "geosite-cn"],
-        "outbound": "China"
       }
+   
     ],
     "rule_set": [
     
