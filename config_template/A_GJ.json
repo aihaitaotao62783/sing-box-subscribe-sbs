@@ -107,19 +107,18 @@
       ],
       "default": "auto-com"
     },
-      {
+   
+   
+   
+   {
       "tag":"Goverment",
       "type":"selector",
-      "outbounds":[
-        "direct",
+      "outbounds":[ 
+       "direct",   
 "auto-cn"
-      ]
+      ],
       "default": "direct"
     },
-   
-   
-   
-  
    
  
     
@@ -242,12 +241,6 @@
         "outbound": "Proxy"
       },
       {
-        "domain_suffix": [
-          ".gov.cn"
-        ],
-        "outbound": "Goverment"
-      },
-       {
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
@@ -256,7 +249,13 @@
         ],
         "outbound": "direct"
       },
-     
+      {
+        "domain_suffix": [
+         
+          ".gov.cn"
+        ],
+        "outbound": "Goverment"
+      },
     
     
     
