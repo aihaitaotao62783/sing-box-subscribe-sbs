@@ -172,7 +172,25 @@
       ],
       "default": "direct"
     },
-   
+     {
+      "tag":"Googles",
+      "type":"selector",
+      "outbounds":[
+       "{all}",
+"auto-com"
+      ],
+      "filter":[
+        {"action":"include","keywords":["香港|日本|新加坡|韩国|IPLC"]}
+      ],
+      "default": "auto-com"
+    },
+
+
+
+
+
+
+ 
   {
       "tag":"China",
       "type":"selector",
@@ -191,18 +209,7 @@
 
 
 
-   {
-      "tag":"Googles",
-      "type":"selector",
-      "outbounds":[
-       "{all}",
-"auto-com"
-      ],
-      "filter":[
-        {"action":"include","keywords":["香港|日本|新加坡|韩国|IPLC"]}
-      ],
-      "default": "auto-com"
-    },
+
    
  
  
@@ -337,16 +344,19 @@
         "rule_set": "geosite-category-bank-cn",
         "outbound": "Bank"
       },
+
+
+{
+        "rule_set": ["geoip-google", "geosite-google"],
+        "outbound": "Googles"
+      },
      
         {
         "rule_set": ["geoip-cn", "geosite-cn"],
         "outbound": "China"
       },
 
-{
-        "rule_set": ["geoip-google", "geosite-google"],
-        "outbound": "Googles"
-      },
+
 
       {
         "rule_set": "geosite-geolocation-!cn",
