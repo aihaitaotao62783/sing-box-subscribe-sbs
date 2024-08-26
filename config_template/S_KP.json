@@ -142,7 +142,7 @@
       "default": "auto-com"
     },
    {
-      "tag":"Google",
+      "tag":"Googles",
       "type":"selector",
       "outbounds":[
        "{all}",
@@ -154,9 +154,27 @@
       "default": "auto-com"
     },
    
+   {
+      "tag":"Goverment",
+      "type":"selector",
+      "outbounds":[ 
+       "direct", 
+        "China",
+"auto-cn"
+      ],
+      "default": "direct"
+    },
    
-   
-  
+    {
+      "tag":"Bank",
+      "type":"selector",
+      "outbounds":[
+"direct",   
+        "China",
+         "auto-cn"
+      ],
+      "default": "direct"
+    },
    
  
     
@@ -288,7 +306,13 @@
         "outbound": "direct"
       },
      
-    
+     {
+        "domain_suffix": [
+         
+          ".gov.cn"
+        ],
+        "outbound": "Goverment"
+      },
     
     
      
@@ -298,7 +322,10 @@
     
    
     
-    
+       {
+        "rule_set": "geosite-category-bank-cn",
+        "outbound": "Bank"
+      },
      
      
       {
@@ -307,7 +334,7 @@
       },
    {
         "rule_set": ["geoip-google", "geosite-google"],
-        "outbound": "Google"
+        "outbound": "Googles"
       },
       {
         "rule_set": "geosite-private",
@@ -325,7 +352,13 @@
     "rule_set": [
     
      
-     
+       {
+        "tag": "geosite-category-bank-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-bank-cn.srs",
+        "download_detour": "direct"
+      },
     
    
    
