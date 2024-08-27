@@ -172,6 +172,20 @@
       ],
       "default": "direct"
     },
+
+     {
+      "tag":"GooglePlay",
+      "type":"selector",
+      "outbounds":[
+       "Googles",
+"auto-com"
+      ],
+      "default": "auto-com"
+    },
+
+
+
+    
      {
       "tag":"Googles",
       "type":"selector",
@@ -331,6 +345,17 @@
         ],
         "outbound": "Goverment"
       },
+
+    {
+        "domain_suffix": [
+         
+          ".googleapis.cn",
+           ".xn--ngstr-lra8j.com",
+           ".xn--ngstr-cn-8za9o.com"
+        ],
+        "outbound": "GooglePlay"
+      },
+      
     
     
      
