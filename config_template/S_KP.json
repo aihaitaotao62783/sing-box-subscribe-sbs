@@ -194,7 +194,7 @@
 "auto-com"
       ],
       "filter":[
-        {"action":"include","keywords":["香港|日本|新加坡|韩国|IPLC"]}
+        {"action":"include","keywords":["香港|日本|新加坡|韩国|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|IPLC"]}
       ],
       "default": "auto-com"
     },
