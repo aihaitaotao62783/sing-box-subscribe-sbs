@@ -27,8 +27,8 @@
     "servers": [
       {
         "tag": "google",
-        "address": "https://dns.google/dns-query",
-        "detour": "direct"
+        "address": "https://cloudflare-dns.com/dns-query",
+        "detour": "Proxy"
       },
       {
         "tag": "local",
