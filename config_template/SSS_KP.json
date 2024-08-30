@@ -77,7 +77,7 @@
         "mode": "and",
         "rules": [
           {
-            "rule_set": "geosite-geolocation-!cn",
+            "rule_set": ["geosite-geolocation-!cn", "ACL4SSR-ProxyGFWlist"],
             "invert": true
           },
           {
@@ -481,7 +481,13 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
         "download_detour": "direct"
       },
-
+  {
+        "tag": "ACL4SSR-ProxyGFWlist",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/ProxyGFWlist.srs,
+        "download_detour": "direct"
+      },
      
 
 
