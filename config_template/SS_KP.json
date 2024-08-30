@@ -412,13 +412,7 @@
    
    
      
-      {
-        "tag": "geoip-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
-        "download_detour": "direct"
-      },
+  
       {
         "tag": "geosite-private",
         "type": "remote",
@@ -450,16 +444,15 @@
     
     
   
-    
+        {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
+        "download_detour": "direct"
+      },
      
-     
-  
-     
-   
-     
-     
-     
-  
+
       {
         "tag": "geosite-cn",
         "type": "remote",
@@ -467,6 +460,15 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
         "download_detour": "direct"
       },
+
+    
+
+
+
+      
+
+
+      
       {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
