@@ -18,6 +18,14 @@
     "store_rdrc": true
     }
   },
+
+"ntp": {
+    "enabled": true,
+    "server": "20.189.79.72",
+    "server_port": 123,
+    "interval": "12h",
+    "detour": "direct"
+  },
   "dns": {
     "fakeip": {
       "enabled": true,
