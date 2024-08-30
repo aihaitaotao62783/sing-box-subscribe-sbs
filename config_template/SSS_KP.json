@@ -65,11 +65,11 @@
           "A",
           "AAAA"
         ],
-        "rule_set": ["geosite-cn", "ACL4SSR-ChinaMedia", "ACL4SSR-ChinaNet", "ACL4SSR-ChinaDomain"],
+        "rule_set": "geosite-cn",
         "server": "fakeip"
       },
       {
-        "rule_set": ["geosite-cn", "ACL4SSR-ChinaMedia", "ACL4SSR-ChinaNet", "ACL4SSR-ChinaDomain"],
+        "rule_set": "geosite-cn",
         "server": "local"
       },
       {
@@ -81,7 +81,7 @@
             "invert": true
           },
           {
-            "rule_set": ["geoip-cn", "ACL4SSR-ChinaIp", "ACL4SSR-ChinaIpV6", "ACL4SSR-ChinaCompanyIp"]
+            "rule_set": "geoip-cn"
           }
         ],
         "server": "google",
@@ -377,7 +377,7 @@
       },
      
         {
-        "rule_set": ["geoip-cn", "geosite-cn", "ACL4SSR-ChinaIp", "ACL4SSR-ChinaIpV6", "ACL4SSR-ChinaCompanyIp", "ACL4SSR-ChinaDNS", "ACL4SSR-ChinaMedia", "ACL4SSR-ChinaNet", "ACL4SSR-ChinaDomain"],
+        "rule_set": ["geoip-cn", "geosite-cn"],
         "outbound": "China"
       },
 
@@ -465,53 +465,6 @@
 
       
 
-        {
-        "tag": "ACL4SSR-ChinaIp",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/ChinaIp.srs",
-        "download_detour": "direct"
-      },
-      
-      {
-        "tag": "ACL4SSR-ChinaDomain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/ChinaDomain.srs",
-        "download_detour": "direct"
-      },
-
-      {
-        "tag": "ACL4SSR-ChinaIpV6",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/ChinaIpV6.srs",
-        "download_detour": "direct"
-      },
-  
-
-      {
-        "tag": "ACL4SSR-ChinaMedia",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/ChinaMedia.srs,
-        "download_detour": "direct"
-      },
-
-           {
-        "tag": "ACL4SSR-ChinaNet",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/ChinaNet.srs,
-        "download_detour": "direct"
-      },
-           {
-        "tag": "ACL4SSR-ChinaCompanyIp",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/ChinaCompanyIp.srs,
-        "download_detour": "direct"
-      },
 
 
 
