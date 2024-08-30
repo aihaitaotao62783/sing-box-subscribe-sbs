@@ -12,10 +12,10 @@
       "external_ui_download_detour": "direct",
       "default_mode": "rule"
     },
-  "cache_file": {
-    "enabled": true,
-    "store_fakeip": true,
-    "store_rdrc": true
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": true,
+      "store_rdrc": true
     }
   },
   "dns": {
@@ -27,65 +27,27 @@
     "servers": [
       {
         "tag": "google",
-        "address": "udp://8.8.8.8"
+        "address": "https://dns.google/dns-query",  // 使用 DoH 代替 UDP
+        "detour": "Proxy" // 确保通过代理通道
       },
       {
-        "tag": "local",
-        "address": "https://223.5.5.5/dns-query",
-        "detour": "direct"
-      },
-      {
-        "tag": "fakeip",
-        "address": "fakeip"
-      },
-      {
-        "tag": "block",
-        "address": "rcode://success"
+        "tag": "cloudflare",
+        "address": "https://cloudflare-dns.com/dns-query", // 添加更多 DoH 服务器
+        "detour": "Proxy"
       }
     ],
     "rules": [
       {
-        "rule_set": ["geosite-category-ads-all","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","ACL4SSR-BanEasyListChina"],
+        "rule_set": ["geosite-category-ads-all", "ACL4SSR-BanAD", "ACL4SSR-BanADCompany", "ACL4SSR-BanProgramAD", "ACL4SSR-BanEasyListChina"],
         "server": "block"
       },
       {
-        "outbound": "any",
-        "server": "local"
-      },
-      {
-        "clash_mode": "direct",
-        "server": "local"
+        "outbound": "dns-out",
+        "server": "google"
       },
       {
         "clash_mode": "global",
         "server": "google"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "rule_set": "geosite-cn",
-        "server": "fakeip"
-      },
-      {
-        "rule_set": "geosite-cn",
-        "server": "local"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "rule_set": ["geosite-geolocation-!cn", "ACL4SSR-ProxyGFWlist"],
-            "invert": true
-          },
-          {
-            "rule_set": "geoip-cn"
-          }
-        ],
-        "server": "google",
-        "client_subnet": "114.114.114.114/24"
       },
       {
         "query_type": [
@@ -126,173 +88,12 @@
   ],
   "outbounds": [
     {
-      "tag":"Proxy",
-      "type":"selector",
-      "outbounds":[
-        "China",
-        "direct",
-"auto-cn",
-        "Googles",
-       "{all}",
-"auto-com"
-      ],
-      "filter":[
-        {"action":"include","keywords":["官网|剩余|到期|IPLC"]}
-      ],
-      "default": "auto-com"
-    },
-
-{
-      "tag":"AdBlock",
-      "type":"selector",
-      "outbounds":[
-        "block",
-        "direct"
-      ]
-    },
-
-  {
-      "tag":"Goverment",
-      "type":"selector",
-      "outbounds":[ 
-       "direct", 
-        "China",
-"auto-cn"
-      ],
-      "default": "direct"
-    },
-   
-    {
-      "tag":"Bank",
-      "type":"selector",
-      "outbounds":[
-"direct",   
-        "China",
-         "auto-cn"
-      ],
-      "default": "direct"
-    },
-
-     {
-      "tag":"GooglePlay",
-      "type":"selector",
-      "outbounds":[
-       "Googles",
-"auto-com"
-      ],
-      "default": "auto-com"
-    },
-
-
-
-    
-     {
-      "tag":"Googles",
-      "type":"selector",
-      "outbounds":[
-       "{all}",
-"auto-com"
-      ],
-      "filter":[
-        {"action":"include","keywords":["香港|日本|新加坡|韩国|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|IPLC"]}
-      ],
-      "default": "auto-com"
-    },
-
-
-
-
-
-
- 
-  {
-      "tag":"China",
-      "type":"selector",
-      "outbounds":[
-"direct",   
-         "auto-cn", 
-     "{all}"
-      ],
-      "filter":[
-        {"action":"include","keywords":["联通|移动|电信|国内|CN"]}
-      ],
-      "default": "auto-cn"
-    },
-    
-
-
-
-
-
-   
- 
- 
-    
- 
-    
- 
-   
-  
-  
- 
-  
-    {
-      "tag":"Global",
-      "type":"selector",
-      "outbounds":[ 
-       "direct",   
-       "China",
-"auto-cn",
-        "Proxy",
-         "Googles",
-     
-"auto-com"
-      ],
-      "default": "auto-com"
-    },
-  
- 
- 
-   
-   
-  
-   
-    {
-      "tag":"auto-cn",
-      "type":"urltest",
-      "outbounds":[
-        "{all}"
-      ],
-      "filter":[
-        {"action":"include","keywords":["联通|电信|移动|国内|湖北"]}
-      ],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "60m",
-      "tolerance": 10,
-"idle_timeout": "120m"
-    },
-{
-      "tag":"auto-com",
-      "type":"urltest",
-      "outbounds":[
-        "{all}"
-      ],
-      "filter":[
-       {"action":"include","keywords":["🇭🇰|HK|hk|香港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea"]}
-      ],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "60m",
-      "tolerance": 20,
-"idle_timeout": "120m"
-    }, 
-
-    {
       "type": "direct",
       "tag": "direct"
     },
     {
       "type": "dns",
-      "tag": "dns-out"
+      "tag": "dns-out" // 专门处理 DNS 出口，确保所有 DNS 请求通过此出口
     },
     {
       "type": "block",
@@ -306,19 +107,19 @@
       {
         "type": "logical",
         "mode": "or",
-        "rules":[
+        "rules": [
           {
-            "port":53
+            "port": 53
           },
           {
             "protocol": "dns"
           }
         ],
-        "outbound": "dns-out"
+        "outbound": "dns-out" // 强制所有 DNS 请求走指定出口
       },
       {
-        "rule_set": ["geosite-category-ads-all", "ACL4SSR-BanAD","ACL4SSR-BanADCompany", "ACL4SSR-BanProgramAD", "ACL4SSR-BanEasyListChina"],
-        "outbound": "AdBlock"
+        "rule_set": ["geosite-category-ads-all", "ACL4SSR-BanAD", "ACL4SSR-BanADCompany", "ACL4SSR-BanProgramAD", "ACL4SSR-BanEasyListChina"],
+        "outbound": "block"
       },
       {
         "clash_mode": "direct",
@@ -337,57 +138,20 @@
         ],
         "outbound": "direct"
       },
-     
-     {
+      {
         "domain_suffix": [
-         
           ".gov.cn"
         ],
-        "outbound": "Goverment"
+        "outbound": "direct" // 政府网站直接访问，避免绕行
       },
-
-    {
-        "domain_suffix": [
-         
-          ".googleapis.cn",
-           ".xn--ngstr-lra8j.com",
-           ".xn--ngstr-cn-8za9o.com"
-        ],
-        "outbound": "GooglePlay"
-      },
-      
-    
-    
-     
-     
-     
-  
-    
-   
-    
-       {
-        "rule_set": "geosite-category-bank-cn",
-        "outbound": "Bank"
-      },
-
-
-{
-        "rule_set": ["geoip-google", "geosite-google"],
-        "outbound": "Googles"
-      },
-     
-        {
+      {
         "rule_set": ["geoip-cn", "geosite-cn"],
-        "outbound": "China"
+        "outbound": "direct"
       },
-
-
-
       {
         "rule_set": "geosite-geolocation-!cn",
-        "outbound": "Global"
+        "outbound": "Proxy" // 非中国地区走代理
       },
-   
       {
         "rule_set": "geosite-private",
         "outbound": "direct"
@@ -396,23 +160,8 @@
         "ip_is_private": true,
         "outbound": "direct"
       }
-   
     ],
     "rule_set": [
-    
-     
-       {
-        "tag": "geosite-category-bank-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-bank-cn.srs",
-        "download_detour": "direct"
-      },
-    
-   
-   
-     
-  
       {
         "tag": "geosite-private",
         "type": "remote",
@@ -420,8 +169,7 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs",
         "download_detour": "direct"
       },
-
-  {
+      {
         "tag": "geoip-google",
         "type": "remote",
         "format": "binary",
@@ -435,24 +183,13 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
         "download_detour": "direct"
       },
-    
-    
-   
-    
-    
-    
-    
-    
-  
-        {
+      {
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
         "download_detour": "direct"
       },
-     
-
       {
         "tag": "geosite-cn",
         "type": "remote",
@@ -460,81 +197,11 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
         "download_detour": "direct"
       },
-
-
-
-      
-
-
-
-
-
-      
-      
-
-
-      
       {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "direct"
-      },
-  {
-        "tag": "ACL4SSR-ProxyGFWlist",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/ProxyGFWlist.srs,
-        "download_detour": "direct"
-      },
-     
-
-
-      
-   {
-        "tag": "ACL4SSR-BanAD",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanAD.srs",
-        "download_detour": "direct"
-      },
-
-  {
-        "tag": "ACL4SSR-BanADCompany",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanADCompany.srs",
-        "download_detour": "direct"
-      },
-
-  {
-        "tag": "ACL4SSR-BanProgramAD",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanProgramAD.srs",
-        "download_detour": "direct"
-      },
-
-  {
-        "tag": "ACL4SSR-BanEasyListChina",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanEasyListChina.srs",
-        "download_detour": "direct"
-      },
-
-
-
-
-
-
-
-      {
-        "tag": "geosite-category-ads-all",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
         "download_detour": "direct"
       }
     ]
