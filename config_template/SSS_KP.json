@@ -27,7 +27,7 @@
     "servers": [
       {
         "tag": "google",
-        "address": "https://cloudflare-dns.com/dns-query",
+        "address": "udp://8.8.8.8",
         "detour": "Proxy"
       },
       {
