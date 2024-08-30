@@ -28,7 +28,7 @@
       {
         "tag": "google",
         "address": "https://dns.google/dns-query",
-        "detour": "Proxy"
+        "detour": "direct"
       },
       {
         "tag": "local",
