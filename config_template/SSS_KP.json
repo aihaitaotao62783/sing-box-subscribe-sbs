@@ -28,7 +28,7 @@
       {
         "tag": "google",
         "address": "udp://8.8.8.8",
-        "detour": "Proxy"
+        "detour": "direct"
       },
       {
         "tag": "local",
