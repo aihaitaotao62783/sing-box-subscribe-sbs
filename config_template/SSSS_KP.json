@@ -203,7 +203,7 @@
 "auto-com"
       ],
       "filter":[
-        {"action":"include","keywords":["香港|日本|新加坡|韩国|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|IPLC"]}
+        {"action":"include","keywords":["香港|日本|新加坡|韩国|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|IPLC|英|德|买|迪拜|澳大|加"]}
       ],
       "default": "auto-com"
     },
@@ -287,7 +287,7 @@
         "{all}"
       ],
       "filter":[
-       {"action":"include","keywords":["🇭🇰|HK|hk|香港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|英|德|买|迪拜|澳大|加"]}
+       {"action":"include","keywords":["🇭🇰|HK|hk|香港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "60m",
