@@ -1,4 +1,4 @@
-{
+ {
   "log": {
     "level": "info",
     "timestamp": true
@@ -35,8 +35,8 @@
     "servers": [
       {
         "tag": "google",
-        "address": "udp://8.8.8.8",
-        "detour": "direct"
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select"
       },
       {
         "tag": "local",
@@ -140,9 +140,9 @@
       "outbounds":[
         "China",
         "direct",
-"auto-cn",
         "Googles",
        "{all}",
+         "auto-cn", 
 "auto-com"
       ],
       "filter":[
@@ -170,7 +170,7 @@
       ],
       "default": "direct"
     },
-   
+
     {
       "tag":"Bank",
       "type":"selector",
@@ -194,7 +194,7 @@
 
 
 
-    
+
      {
       "tag":"Googles",
       "type":"selector",
@@ -203,7 +203,7 @@
 "auto-com"
       ],
       "filter":[
-        {"action":"include","keywords":["香港|日本|新加坡|韩国|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|IPLC"]}
+        {"action":"include","keywords":["香港|日本|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|IPLC"]}
       ],
       "default": "auto-com"
     },
@@ -213,7 +213,7 @@
 
 
 
- 
+
   {
       "tag":"China",
       "type":"selector",
@@ -227,24 +227,24 @@
       ],
       "default": "auto-cn"
     },
-    
 
 
 
 
 
-   
- 
- 
-    
- 
-    
- 
-   
-  
-  
- 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
     {
       "tag":"Global",
       "type":"selector",
@@ -254,18 +254,18 @@
 "auto-cn",
         "Proxy",
          "Googles",
-     
+
 "auto-com"
       ],
       "default": "auto-com"
     },
-  
- 
- 
-   
-   
-  
-   
+
+
+
+
+
+
+
     {
       "tag":"auto-cn",
       "type":"urltest",
@@ -287,7 +287,7 @@
         "{all}"
       ],
       "filter":[
-       {"action":"include","keywords":["🇭🇰|HK|hk|香港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea"]}
+       {"action":"include","keywords":["🇭🇰|HK|hk|香港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇯🇵|JP|jp|日本|日|Japan"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "60m",
@@ -346,10 +346,10 @@
         ],
         "outbound": "direct"
       },
-     
+
      {
         "domain_suffix": [
-         
+
           ".gov.cn"
         ],
         "outbound": "Goverment"
@@ -357,23 +357,23 @@
 
     {
         "domain_suffix": [
-         
+
           ".googleapis.cn",
            ".xn--ngstr-lra8j.com",
            ".xn--ngstr-cn-8za9o.com"
         ],
         "outbound": "GooglePlay"
       },
-      
-    
-    
-     
-     
-     
-  
-    
-   
-    
+
+
+
+
+
+
+
+
+
+
        {
         "rule_set": "geosite-category-bank-cn",
         "outbound": "Bank"
@@ -384,7 +384,7 @@
         "rule_set": ["geoip-google", "geosite-google"],
         "outbound": "Googles"
       },
-     
+
         {
         "rule_set": ["geoip-cn", "geosite-cn"],
         "outbound": "China"
@@ -396,7 +396,7 @@
         "rule_set": "geosite-geolocation-!cn",
         "outbound": "Global"
       },
-   
+
       {
         "rule_set": "geosite-private",
         "outbound": "direct"
@@ -405,11 +405,11 @@
         "ip_is_private": true,
         "outbound": "direct"
       }
-   
+
     ],
     "rule_set": [
-    
-     
+
+
        {
         "tag": "geosite-category-bank-cn",
         "type": "remote",
@@ -417,11 +417,11 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-bank-cn.srs",
         "download_detour": "direct"
       },
-    
-   
-   
-     
-  
+
+
+
+
+
       {
         "tag": "geosite-private",
         "type": "remote",
@@ -444,15 +444,15 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
         "download_detour": "direct"
       },
-    
-    
-   
-    
-    
-    
-    
-    
-  
+
+
+
+
+
+
+
+
+
         {
         "tag": "geoip-cn",
         "type": "remote",
@@ -460,7 +460,7 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
         "download_detour": "direct"
       },
-     
+
 
       {
         "tag": "geosite-cn",
@@ -470,14 +470,14 @@
         "download_detour": "direct"
       },
 
-    
 
 
 
-      
 
 
-      
+
+
+
       {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
