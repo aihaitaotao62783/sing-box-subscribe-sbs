@@ -273,7 +273,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["联通|电信|移动|国内|湖北"]}
+        {"action":"include","keywords":["联通|电信|移动|国内|CN"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "60m",
@@ -287,7 +287,7 @@
         "{all}"
       ],
       "filter":[
-       {"action":"include","keywords":["🇭🇰|HK|hk|香港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇯🇵|JP|jp|日本|日|Japan"]}
+       {"action":"include","keywords":["🇭🇰|HK|hk|香港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇯🇵|JP|jp|日本|日|Japan|隧道"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "60m",
