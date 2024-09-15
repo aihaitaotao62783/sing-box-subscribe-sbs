@@ -36,7 +36,7 @@
       {
         "tag": "google",
         "address": "https://8.8.8.8/dns-query",
-        "detour": "Proxy"
+        "detour": "select"
       },
       {
         "tag": "local",
