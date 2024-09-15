@@ -30,8 +30,7 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "tls://8.8.8.8",
-        "detour": "Proxy"
+        "address": "udp://8.8.8.8"
       },
       {
         "tag": "localDns",
