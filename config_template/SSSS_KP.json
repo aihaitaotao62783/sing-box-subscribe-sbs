@@ -15,11 +15,8 @@
   "cache_file": 
 {
   "enabled": true,
-  "path": "",
-  "cache_id": "",
   "store_fakeip": true,
-  "store_rdrc": true,
-  "rdrc_timeout": "7d"
+  "store_rdrc": true
 }
   },
 
