@@ -30,8 +30,8 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "https://8.8.8.8/dns-query",
-        "detour": "select"
+        "address": "tls://8.8.8.8",
+        "detour": "Proxy"
       },
       {
         "tag": "localDns",
