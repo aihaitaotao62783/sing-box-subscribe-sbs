@@ -26,11 +26,6 @@
     "detour": "direct"
   },
   "dns": {
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    },
     "servers": [
       {
         "tag": "google",
@@ -41,11 +36,7 @@
         "tag": "local",
         "address": "https://223.5.5.5/dns-query",
         "detour": "direct"
-      },
-      {
-        "tag": "fakeip",
-        "address": "fakeip"
-      },
+      }, 
       {
         "tag": "block",
         "address": "rcode://success"
