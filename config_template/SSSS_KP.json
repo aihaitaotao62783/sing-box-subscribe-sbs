@@ -19,7 +19,7 @@
   "cache_id": "",
   "store_fakeip": true,
   "store_rdrc": true,
-  "rdrc_timeout": ""
+  "rdrc_timeout": "7d"
 }
   },
 
