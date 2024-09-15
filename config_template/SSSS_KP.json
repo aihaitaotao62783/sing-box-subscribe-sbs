@@ -400,7 +400,7 @@
    
       {
         "rule_set": "geosite-private",
-        "outbound": "Googles"
+        "outbound": "direct"
       },
       {
         "ip_is_private": true,
