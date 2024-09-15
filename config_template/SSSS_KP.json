@@ -36,8 +36,7 @@
     "servers": [
       {
         "tag": "google",
-        "address": "https://8.8.8.8/dns-query",
-        "detour": "select"
+        "address": "https://8.8.8.8/dns-query"
       },
       {
         "tag": "local",
