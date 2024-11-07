@@ -277,9 +277,9 @@
         {"action":"include","keywords":["联通|电信|移动|国内|CN"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "60m",
+      "interval": "1m",
       "tolerance": 20,
-"idle_timeout": "60m"
+"idle_timeout": "10m"
     },
 {
       "tag":"auto-com",
@@ -291,9 +291,9 @@
        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "60m",
+      "interval": "1m",
       "tolerance": 20,
-"idle_timeout": "60m"
+"idle_timeout": "10m"
     }, 
 
     {
