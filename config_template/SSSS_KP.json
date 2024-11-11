@@ -12,12 +12,11 @@
       "external_ui_download_detour": "direct",
       "default_mode": "rule"
     },
-  "cache_file": 
-{
-  "enabled": true,
-  "store_fakeip": true,
-  "store_rdrc": true
-}
+  "cache_file": {
+    "enabled": true,
+    "store_fakeip": true,
+    "store_rdrc": true
+    }
   },
 
 "ntp": {
@@ -54,7 +53,7 @@
     ],
     "rules": [
       {
-        "rule_set": ["geosite-category-ads-all","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","ACL4SSR-BanEasyListChina"],
+        "rule_set": ["geosite-category-ads-all","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","adblock_reject","ACL4SSR-BanEasyListChina"],
         "server": "block"
       },
       {
@@ -111,8 +110,10 @@
     {
       "tag": "tun",
       "type": "tun",
-      "inet4_address": "172.19.0.0/30",
-      "inet6_address": "fdfe:dcba:9876::0/126",
+      "address": [
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
+      ],
       "stack": "system",
       "auto_route": true,
       "strict_route": true,
@@ -170,7 +171,7 @@
       ],
       "default": "direct"
     },
-   
+
     {
       "tag":"Bank",
       "type":"selector",
@@ -194,7 +195,7 @@
 
 
 
-    
+
      {
       "tag":"Googles",
       "type":"selector",
@@ -203,7 +204,7 @@
 "auto-com"
       ],
       "filter":[
-        {"action":"include","keywords":["香港|日本|新加坡|韩国|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|IPLC|英|德|买|迪拜|澳大|加"]}
+        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道|IPLC"]}
       ],
       "default": "auto-com"
     },
@@ -213,13 +214,14 @@
 
 
 
- 
+
   {
       "tag":"China",
       "type":"selector",
       "outbounds":[
 "direct",   
          "auto-cn", 
+       "autos-cn", 
      "{all}"
       ],
       "filter":[
@@ -227,24 +229,24 @@
       ],
       "default": "auto-cn"
     },
-    
 
 
 
 
 
-   
- 
- 
-    
- 
-    
- 
-   
-  
-  
- 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
     {
       "tag":"Global",
       "type":"selector",
@@ -254,18 +256,18 @@
 "auto-cn",
         "Proxy",
          "Googles",
-     
+
 "auto-com"
       ],
       "default": "auto-com"
     },
-  
- 
- 
-   
-   
-  
-   
+
+
+
+
+
+
+
     {
       "tag":"auto-cn",
       "type":"urltest",
@@ -273,12 +275,26 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["联通|电信|移动|国内|湖北"]}
+        {"action":"include","keywords":["联通|电信|移动|国内|CN"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "720m",
-      "tolerance": 10,
-"idle_timeout": "1440m"
+      "interval": "30m",
+      "tolerance": 20,
+"idle_timeout": "60m"
+    },
+    {
+      "tag":"autos-cn",
+      "type":"urltest",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["徐州移动|镇江联通|济南联通|河南移动|宿迁移动|河南1G|河北-VIP|河南-VIP|北京-VIP|湖北-VIP"]}
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "5m",
+      "tolerance": 20,
+"idle_timeout": "30m"
     },
 {
       "tag":"auto-com",
@@ -287,12 +303,12 @@
         "{all}"
       ],
       "filter":[
-       {"action":"include","keywords":["🇭🇰|HK|hk|香港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea"]}
+       {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "720m",
+      "interval": "30m",
       "tolerance": 20,
-"idle_timeout": "1440m"
+"idle_timeout": "60m"
     }, 
 
     {
@@ -346,10 +362,10 @@
         ],
         "outbound": "direct"
       },
-     
+
      {
         "domain_suffix": [
-         
+
           ".gov.cn"
         ],
         "outbound": "Goverment"
@@ -357,23 +373,23 @@
 
     {
         "domain_suffix": [
-         
+
           ".googleapis.cn",
            ".xn--ngstr-lra8j.com",
            ".xn--ngstr-cn-8za9o.com"
         ],
         "outbound": "GooglePlay"
       },
-      
-    
-    
-     
-     
-     
-  
-    
-   
-    
+
+
+
+
+
+
+
+
+
+
        {
         "rule_set": "geosite-category-bank-cn",
         "outbound": "Bank"
@@ -384,7 +400,7 @@
         "rule_set": ["geoip-google", "geosite-google"],
         "outbound": "Googles"
       },
-     
+
         {
         "rule_set": ["geoip-cn", "geosite-cn"],
         "outbound": "China"
@@ -396,7 +412,7 @@
         "rule_set": "geosite-geolocation-!cn",
         "outbound": "Global"
       },
-   
+
       {
         "rule_set": "geosite-private",
         "outbound": "direct"
@@ -405,11 +421,11 @@
         "ip_is_private": true,
         "outbound": "direct"
       }
-   
+
     ],
     "rule_set": [
-    
-     
+
+
        {
         "tag": "geosite-category-bank-cn",
         "type": "remote",
@@ -417,11 +433,11 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-bank-cn.srs",
         "download_detour": "direct"
       },
-    
-   
-   
-     
-  
+
+
+
+
+
       {
         "tag": "geosite-private",
         "type": "remote",
@@ -444,15 +460,15 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
         "download_detour": "direct"
       },
-    
-    
-   
-    
-    
-    
-    
-    
-  
+
+
+
+
+
+
+
+
+
         {
         "tag": "geoip-cn",
         "type": "remote",
@@ -460,7 +476,7 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
         "download_detour": "direct"
       },
-     
+
 
       {
         "tag": "geosite-cn",
@@ -470,14 +486,14 @@
         "download_detour": "direct"
       },
 
-    
 
 
 
-      
 
 
-      
+
+
+
       {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
@@ -517,6 +533,15 @@
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanEasyListChina.srs",
         "download_detour": "direct"
       },
+
+       {
+        "tag": "adblock_reject",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.srs",
+        "download_detour": "direct"
+      },
+
 
 
 
