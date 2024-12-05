@@ -289,12 +289,12 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["徐州移动|镇江联通|济南联通|河南移动|宿迁移动|河南1G|河北-VIP|河南-VIP|北京-VIP|湖北-VIP"]}
+        {"action":"include","keywords":["徐州移动|镇江联通|游戏|河南-VIP|北京-VIP|湖北-VIP"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "30m",
+      "interval": "3m",
       "tolerance": 20,
-"idle_timeout": "30m"
+"idle_timeout": "10m"
     },
 {
       "tag":"auto-com",
