@@ -141,14 +141,6 @@
       "default": "auto-com"
     },
 
-{
-      "tag":"AdBlock",
-      "type":"selector",
-      "outbounds":[
-        "block",
-        "direct"
-      ]
-    },
 
   {
       "tag":"Goverment",
@@ -326,12 +318,12 @@
           "action": "hijack-dns"
         },
         {
-          "rule_set": ["geosite-category-ads-all", "ACL4SSR-BanAD","ACL4SSR-BanADCompany", "ACL4SSR-BanProgramAD", "ACL4SSR-BanEasyListChina"],
+          "rule_set": ["geosite-category-ads-all","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","adblock_reject","ACL4SSR-BanEasyListChina"],
           "clash_mode": "rule",
           "action": "reject"
         },
         {
-          "rule_set": ["geosite-category-ads-all", "ACL4SSR-BanAD","ACL4SSR-BanADCompany", "ACL4SSR-BanProgramAD", "ACL4SSR-BanEasyListChina"],
+          "rule_set": ["geosite-category-ads-all","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","adblock_reject","ACL4SSR-BanEasyListChina"],
           "clash_mode": "global",
           "outbound": "Proxy"
         },
