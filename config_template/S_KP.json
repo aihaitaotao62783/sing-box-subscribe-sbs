@@ -317,18 +317,18 @@
           ],
           "action": "hijack-dns"
         },
-       {
-                "type": "logical",
-                "mode": "and",
-                "rules": [
-                    {
-                        "clash_mode": "reject"
-                    },
-                    {
-                        "rule_set": [
-                            
-                            "geoip-cn", 
-                            "geosite-cn"
+      {
+         "type": "logical",
+         "mode": "and",
+         "rules": [
+            {"clash_mode": "reject"},
+            {"rule_set": [
+                            "geosite-category-ads-all",
+                            "ACL4SSR-BanAD",
+                            "ACL4SSR-BanADCompany",
+                            "ACL4SSR-BanProgramAD",
+                            "adblock_reject",
+                            "ACL4SSR-BanEasyListChina"
                         ]
                     }
                 ],
