@@ -545,8 +545,8 @@
   "tag": "geosite-wechat",
   "type": "remote",
   "format": "source",
-  "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/aihaitaotao62783/sing-box-geosite/main/wechat.json",
-  "download_detour": "direct"
+  "url": "https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/wechat.json",
+  "download_detour": "auto"
 },
 
 
