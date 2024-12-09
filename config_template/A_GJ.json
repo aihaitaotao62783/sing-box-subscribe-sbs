@@ -400,7 +400,7 @@
       },
 
   {
-        "package": "com.tencent.mm",
+        "package_name": "com.tencent.mm",
         "outbound": "Wchat"
       },
 
