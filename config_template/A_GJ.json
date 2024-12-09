@@ -399,10 +399,17 @@
         "outbound": "China"
       },
 
-  {
-        "package_name": "com.tencent.mm",
-        "outbound": "Wchat"
-      },
+
+
+{
+          "type": "logical",
+          "mode": "or",
+         "package_name": "com.tencent.mm",
+         "outbound": "Wchat"
+         
+        },
+          
+
 
       {
         "rule_set": "geosite-geolocation-!cn",
