@@ -167,10 +167,14 @@
       "tag":"Wechat",
       "type":"selector",
       "outbounds":[
-"direct",   
-        "China"
+        "direct",   
+        "China",
+        "{all}"
+      ], 
+        "filter":[
+        {"action":"include","keywords":["北京"]}
       ],
-      "default": "direct"
+        "default": "direct"
     },
 
      {
