@@ -327,12 +327,27 @@
           ],
           "action": "hijack-dns"
         },
-          {
+   {
+          "type": "logical",
+          "mode": "or",
+         "rules": [
+     {
           "package_name": [
-          "com.tencent.mm"
+          "com.tencent.mm"]
+      }
         ],
        "outbound": "Wechat"
-      }
+      },
+    
+
+
+    
+
+
+
+
+
+         
 
       {
          "type": "logical",
