@@ -215,7 +215,7 @@
      "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["联通|移动|电信|国内|CN|私"]}
+        {"action":"include","keywords":["联通|移动|电信|国内|CN"]}
       ],
       "default": "autos-cn"
     },
