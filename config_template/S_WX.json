@@ -1,6 +1,6 @@
 {
     "log": {
-      "level": "panic",
+      "level": "info",
       "timestamp": true
     },
     "experimental": {
