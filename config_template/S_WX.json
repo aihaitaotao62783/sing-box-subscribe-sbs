@@ -293,7 +293,7 @@
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 20,
-"idle_timeout": "20m"
+"idle_timeout": "120m"
     },
 {
       "tag":"auto-com",
@@ -321,7 +321,7 @@
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 20,
-"idle_timeout": "20m"
+"idle_timeout": "120m"
     }, 
       {
         "type": "direct",
