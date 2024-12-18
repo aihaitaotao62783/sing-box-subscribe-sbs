@@ -9,7 +9,7 @@
         "external_ui": "ui",
         "secret": "",
         "external_ui_download_url": "https://cf.ghproxy.cc/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-        "external_ui_download_detour": "direct",
+        "external_ui_download_detour": "auto-com",
         "default_mode": "rule"
       },
     "cache_file": {
@@ -480,7 +480,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-bank-cn.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
 
@@ -492,7 +492,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
   {
@@ -500,14 +500,14 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
       {
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
 
@@ -523,7 +523,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
 
@@ -532,7 +532,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
 
@@ -548,7 +548,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
    {
@@ -556,7 +556,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanAD.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
   
@@ -566,7 +566,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanProgramAD.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
   {
@@ -574,7 +574,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanEasyListChina.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
        {
@@ -582,7 +582,7 @@
         "type": "remote",
         "format": "source",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.json",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       },
 
 
@@ -597,7 +597,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cf.ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "direct"
+        "download_detour": "auto-com"
       }
       ]
     }
