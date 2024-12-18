@@ -581,7 +581,7 @@
         "tag": "adblock_reject",
         "type": "remote",
         "format": "binary",
-        "url": "https://cf.ghproxy.cc/https://www.adblock-singbox-srs.reiji007.org/",
+        "url": "https://www.adblock-singbox-srs.reiji007.org",
         "download_detour": "direct"
       },
 
