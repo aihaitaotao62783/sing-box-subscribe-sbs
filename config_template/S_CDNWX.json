@@ -127,9 +127,9 @@
        {
       "tag": "proxy-private",
       "type": "vmess",
-      "server": "192.3.85.20",
-      "server_port": 60004,
-      "uuid": "acca7b4d-4ad9-4b37-8455-e4247f2a386e",
+      "server": "5522dbbd-d0d8-6cf0-95cf-754584bf28bf.castlepeakhospital.moe",
+      "server_port": 80,
+      "uuid": "febe1a08-7b0d-4d14-a964-8688db496d13",
       "security": "auto",
       "alter_id": 0,
       "packet_encoding": "xudp",
