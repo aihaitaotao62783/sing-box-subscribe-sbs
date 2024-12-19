@@ -127,7 +127,7 @@
        {
       "tag": "proxy-private",
       "type": "vmess",
-      "server": "ssocks55.forprivtelearnuser.buzz",
+      "server": "192.3.85.20",
       "server_port": 60004,
       "uuid": "acca7b4d-4ad9-4b37-8455-e4247f2a386e",
       "security": "auto",
