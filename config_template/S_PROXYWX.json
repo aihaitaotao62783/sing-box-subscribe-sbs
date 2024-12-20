@@ -356,7 +356,9 @@
          "rules": [
      {
           "package_name": [
-          "com.tencent.mm"]
+          "com.tencent.mm",
+          "com.eg.android.AlipayGphone"
+]
       }
         ],
        "outbound": "Wechat"
