@@ -9,7 +9,7 @@
       "external_ui": "ui",
       "secret": "",
       "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "direct",
+      "external_ui_download_detour": "Proxy",
       "default_mode": "rule"
     },
   "cache_file": {
@@ -184,6 +184,19 @@
     },
 
      {
+      "tag":"Wechat",
+      "type":"selector",
+      "outbounds":[
+        "direct",   
+        "China",
+        "{all}"
+      ], 
+        "filter":[
+        {"action":"include","keywords":["北京|游戏"]}
+      ],
+        "default": "direct"
+    },
+     {
       "tag":"GooglePlay",
       "type":"selector",
       "outbounds":[
@@ -196,17 +209,19 @@
 
 
 
-     {
+       {
       "tag":"Googles",
       "type":"selector",
       "outbounds":[
-       "{all}",
-"auto-com"
+"autos-com",
+"auto-com",
+       "{all}"
+
       ],
       "filter":[
         {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道|IPLC"]}
       ],
-      "default": "auto-com"
+      "default": "autos-com"
     },
 
 
@@ -247,6 +262,7 @@
 
 
 
+
     {
       "tag":"Global",
       "type":"selector",
@@ -259,7 +275,7 @@
 
 "auto-com"
       ],
-      "default": "auto-com"
+      "default": "Googles"
     },
 
 
@@ -292,9 +308,9 @@
         {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|CN-河南移动|CN-四川BGP|CN-徐州移动|CN-河南1G|河南-VIP|北京-VIP|湖北-VIP|宿迁-VIP"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "3m",
+      "interval": "10m",
       "tolerance": 20,
-"idle_timeout": "10m"
+"idle_timeout": "60m"
     },
 {
       "tag":"auto-com",
@@ -307,6 +323,20 @@
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "30m",
+      "tolerance": 20,
+"idle_timeout": "60m"
+    }, 
+   {
+      "tag":"autos-com",
+      "type":"urltest",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+       {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong"]}
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
       "tolerance": 20,
 "idle_timeout": "60m"
     }, 
@@ -341,8 +371,21 @@
         ],
         "outbound": "dns-out"
       },
+     {
+          "type": "logical",
+          "mode": "or",
+         "rules": [
+     {
+          "package_name": [
+          "com.tencent.mm",
+          "com.eg.android.AlipayGphone"
+]
+      }
+        ],
+       "outbound": "Wechat"
+      },
       {
-        "rule_set": ["geosite-category-ads-all", "ACL4SSR-BanAD","ACL4SSR-BanADCompany", "ACL4SSR-BanProgramAD", "ACL4SSR-BanEasyListChina"],
+        "rule_set": ["geosite-category-ads-all","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","adblock_reject","ACL4SSR-BanEasyListChina"],
         "outbound": "AdBlock"
       },
       {
@@ -366,7 +409,7 @@
      {
         "domain_suffix": [
 
-          ".gov.cn"
+          "gov.cn"
         ],
         "outbound": "Goverment"
       },
@@ -374,9 +417,9 @@
     {
         "domain_suffix": [
 
-          ".googleapis.cn",
-           ".xn--ngstr-lra8j.com",
-           ".xn--ngstr-cn-8za9o.com"
+          "googleapis.cn",
+           "xn--ngstr-lra8j.com",
+           "xn--ngstr-cn-8za9o.com"
         ],
         "outbound": "GooglePlay"
       },
@@ -431,7 +474,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-bank-cn.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
 
@@ -443,7 +486,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
   {
@@ -451,14 +494,14 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
       {
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
 
@@ -474,7 +517,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
 
@@ -483,7 +526,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
 
@@ -499,7 +542,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
    {
@@ -507,7 +550,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanAD.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
   {
@@ -515,7 +558,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanADCompany.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
   {
@@ -523,7 +566,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanProgramAD.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
   {
@@ -531,7 +574,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanEasyListChina.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
        {
@@ -539,7 +582,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       },
 
 
@@ -554,7 +597,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "direct"
+        "download_detour": "Proxy"
       }
     ]
   }
