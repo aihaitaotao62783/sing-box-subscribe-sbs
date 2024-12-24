@@ -600,11 +600,10 @@
   "tag": "adrules_domainset",
   "type": "remote",
   "format": "binary",
-  "url": "https://raw.githubusercontent.com/aihaitaotao62783/sing-box-geosite-sbs/blob/main/rule/adrules_domainset.srs",
+  "url": "https://github.com/aihaitaotao62783/sing-box-geosite-sbs/raw/main/rule/adrules_domainset.srs",
  "download_detour": "Proxy",
 "update_interval": "1d"
 },
-
 
 
 
