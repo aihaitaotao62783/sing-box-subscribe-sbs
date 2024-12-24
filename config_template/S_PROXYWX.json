@@ -381,6 +381,7 @@
             {"clash_mode": "reject"},
             {"rule_set": [
                             "geosite-category-ads-all",
+                            "adrules_domainset",
                             "ACL4SSR-BanAD",
                             "ACL4SSR-BanADCompany",
                             "ACL4SSR-BanProgramAD",
@@ -605,12 +606,14 @@
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
-
-
-
-
-
-
+{
+  "tag": "adrules_domainset",
+  "type": "remote",
+  "format": "binary",
+  "url": "https://raw.githubusercontent.com/aihaitaotao62783/sing-box-geosite-sbs/blob/main/rule/adrules_domainset.srs",
+ "download_detour": "Proxy",
+"update_interval": "1d"
+},
 
 
       {
