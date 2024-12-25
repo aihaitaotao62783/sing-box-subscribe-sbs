@@ -386,6 +386,7 @@
                             "ACL4SSR-BanADCompany",
                             "ACL4SSR-BanProgramAD",
                             "adblock_reject",
+                            "AWAvenue-Ads-Rule-Singbox",
                             "ACL4SSR-BanEasyListChina"
                         ]
                     }
@@ -613,6 +614,13 @@
   "url": "https://github.com/aihaitaotao62783/sing-box-geosite-sbs/raw/main/rule/adrules_domainset.srs",
  "download_detour": "Proxy",
 "update_interval": "1d"
+},
+
+ {
+       "tag": "AWAvenue-Ads-Rule-Singbox",
+       "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main//Filters/AWAvenue-Ads-Rule-Singbox.srs"
 },
 
 
