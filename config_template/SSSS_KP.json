@@ -605,6 +605,13 @@
 "update_interval": "1d"
 },
 
+ {
+       "tag": "AWAvenue-Ads-Rule-Singbox",
+       "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main//Filters/AWAvenue-Ads-Rule-Singbox.srs"
+},
+
 
 
 
