@@ -8,7 +8,7 @@
         "external_controller": "127.0.0.1:9090",
         "external_ui": "ui",
         "secret": "",
-        "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+        "external_ui_download_url": "https://ghgo.xyz/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
         "external_ui_download_detour": "Proxy",
         "default_mode": "rule"
       },
@@ -483,7 +483,7 @@
         "tag": "geosite-category-bank-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-bank-cn.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-bank-cn.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -496,7 +496,7 @@
         "tag": "geosite-private",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -505,7 +505,7 @@
         "tag": "geoip-google",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -513,7 +513,7 @@
         "tag": "geosite-google",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -530,7 +530,7 @@
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -540,7 +540,7 @@
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -557,7 +557,7 @@
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -566,7 +566,7 @@
         "tag": "ACL4SSR-BanAD",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanAD.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanAD.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -574,7 +574,7 @@
         "tag": "ACL4SSR-BanADCompany",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanADCompany.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanADCompany.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -585,7 +585,7 @@
         "tag": "ACL4SSR-BanProgramAD",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanProgramAD.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanProgramAD.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -594,7 +594,7 @@
         "tag": "ACL4SSR-BanEasyListChina",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanEasyListChina.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanEasyListChina.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -603,7 +603,7 @@
         "tag": "adblock_reject",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.srs",
         "download_detour": "Proxy",
 "update_interval": "1d"
       },
@@ -611,7 +611,7 @@
   "tag": "adrules_domainset",
   "type": "remote",
   "format": "binary",
-  "url": "https://github.com/aihaitaotao62783/sing-box-geosite-sbs/raw/main/rule/adrules_domainset.srs",
+  "url": "https://ghgo.xyz/https://github.com/aihaitaotao62783/sing-box-geosite-sbs/raw/main/rule/adrules_domainset.srs",
  "download_detour": "Proxy",
 "update_interval": "1d"
 },
@@ -620,7 +620,7 @@
        "tag": "AWAvenue-Ads-Rule-Singbox",
        "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
      "download_detour": "Proxy",
      "update_interval": "1d"
 },
@@ -630,7 +630,7 @@
         "tag": "geosite-category-ads-all",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
+        "url": "https://ghgo.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
         "download_detour": "Proxy",
         "update_interval": "1d"
       }
