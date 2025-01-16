@@ -175,7 +175,7 @@
         "{all}"
       ], 
         "filter":[
-        {"action":"include","keywords":["北京|游戏"]}
+        {"action":"include","keywords":["镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京-VIP"]}
       ],
         "default": "direct"
     },
@@ -288,7 +288,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|济南联通|CN-河南移动|CN-四川BGP|CN-徐州移动|CN-河南1G|河南-VIP|北京-VIP|湖北-VIP|宿迁-VIP"]}
+        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|济南联通|CN-河南移动|CN-四川BGP|CN-徐州移动|CN-河南1G|河南-VIP|北京-VIP|湖北-VIP|宿迁-VIP|山东-VIP"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
