@@ -192,7 +192,7 @@
         "{all}"
       ], 
         "filter":[
-        {"action":"include","keywords":["北京|游戏"]}
+        {"action":"include","keywords":["镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京-VIP"]}
       ],
         "default": "direct"
     },
@@ -294,7 +294,7 @@
         {"action":"include","keywords":["联通|电信|移动|国内|CN"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "30m",
+      "interval": "60m",
       "tolerance": 20,
 "idle_timeout": "60m"
     },
@@ -308,7 +308,7 @@
         {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|CN-河南移动|CN-四川BGP|CN-徐州移动|CN-河南1G|河南-VIP|北京-VIP|湖北-VIP|宿迁-VIP"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "interval": "20m",
       "tolerance": 20,
 "idle_timeout": "60m"
     },
@@ -322,7 +322,7 @@
        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "30m",
+      "interval": "60m",
       "tolerance": 20,
 "idle_timeout": "60m"
     }, 
@@ -336,7 +336,7 @@
        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "interval": "20m",
       "tolerance": 20,
 "idle_timeout": "60m"
     }, 
