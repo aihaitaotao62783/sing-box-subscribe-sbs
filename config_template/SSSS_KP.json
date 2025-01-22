@@ -609,7 +609,7 @@
        "tag": "AWAvenue-Ads-Rule-Singbox",
        "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
         "download_detour": "direct",
         "update_interval": "1d"
 },
