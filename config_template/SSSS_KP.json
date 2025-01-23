@@ -53,7 +53,7 @@
     ],
     "rules": [
       {
-        "rule_set": ["geosite-category-ads-all","adrules_domainset","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","adblock_reject","ACL4SSR-BanEasyListChina"],
+        "rule_set": ["geosite-category-ads-all","adrules_domainset","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","adblock_reject","ACL4SSR-BanEasyListChina","AWAvenue-Ads-Rule-Singbox"],
         "server": "block"
       },
       {
@@ -385,7 +385,7 @@
        "outbound": "Wechat"
       },
       {
-        "rule_set": ["geosite-category-ads-all","adrules_domainset","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","adblock_reject","ACL4SSR-BanEasyListChina"],
+        "rule_set": ["geosite-category-ads-all","adrules_domainset","ACL4SSR-BanAD","ACL4SSR-BanADCompany","ACL4SSR-BanProgramAD","adblock_reject","ACL4SSR-BanEasyListChina","AWAvenue-Ads-Rule-Singbox"],
         "outbound": "AdBlock"
       },
       {
@@ -613,7 +613,14 @@
         "download_detour": "direct",
         "update_interval": "1d"
 },
-
+ {
+       "tag": "AWAvenue-Ads-Rule-Singbox",
+       "type": "remote",
+        "format": "binary",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
+     "download_detour": "Proxy",
+     "update_interval": "1d"
+},
 
 
 
