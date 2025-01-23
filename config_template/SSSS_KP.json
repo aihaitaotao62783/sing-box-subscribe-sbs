@@ -618,7 +618,7 @@
        "type": "remote",
         "format": "binary",
         "url": "https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
-     "download_detour": "Proxy",
+     "download_detour": "direct",
      "update_interval": "1d"
 },
 
