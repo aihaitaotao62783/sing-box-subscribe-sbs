@@ -128,7 +128,7 @@
       "tag":"Proxy",
       "type":"selector",
       "outbounds":[
-        "China",
+     
         "direct",
         "Googles",
        "{all}",
