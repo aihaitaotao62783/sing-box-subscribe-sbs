@@ -128,17 +128,15 @@
       "tag":"Proxy",
       "type":"selector",
       "outbounds":[
-     
+        "China",
         "direct",
         "Googles",
-       "{all}",
-         "auto-cn", 
-"auto-com"
+       "{all}"
       ],
       "filter":[
         {"action":"include","keywords":["官网|剩余|到期|IPLC"]}
       ],
-      "default": "auto-com"
+      "default": "Googles"
     },
 
 
