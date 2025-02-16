@@ -31,7 +31,7 @@
         {
          "tag": "google",
          "type": "tls",
-         "server": "dns.google"
+         "server": "8.8.8.8"
         },
         { 
         "tag": "local",
