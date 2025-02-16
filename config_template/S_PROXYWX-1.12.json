@@ -30,8 +30,8 @@
       "servers": [
         {
          "tag": "google",
-         "type": "https",
-         "server": "8.8.8.8"
+         "type": "tls",
+         "server": "dns.google"
         },
         { 
         "tag": "local",
