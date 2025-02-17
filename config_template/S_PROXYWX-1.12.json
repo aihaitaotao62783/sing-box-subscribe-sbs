@@ -30,7 +30,7 @@
       "servers": [
         {
          "tag": "google",
-         "type": "tls",
+         "type": "https",
          "server": "8.8.8.8",
          "detour": "Proxy"
         },
