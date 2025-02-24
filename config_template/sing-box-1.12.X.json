@@ -467,9 +467,7 @@
         "action": "route",
         "outbound": "Googles"
       },
-          {
-        "action": "resolve"
-      },
+ 
 
         {
         "rule_set": ["geoip-cn", "geosite-cn"],
