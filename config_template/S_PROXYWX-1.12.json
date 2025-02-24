@@ -31,13 +31,13 @@
         {
          "tag": "google",
          "type": "https",
-         "server": "8.8.8.8",
+         "server": "8.8.8.8/dns-query",
          "detour": "Proxy"
         },
         { 
         "tag": "local",
         "type": "https",
-        "server": "114.114.114.114",
+        "server": "233.5.5.5/dns-query",
         "detour": "direct"
         },
         {
