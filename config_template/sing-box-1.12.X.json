@@ -93,9 +93,7 @@
             "A",
             "AAAA"
           ],
-           "action": "route",
-          "server": "fakeip",
-          "rewrite_ttl": 1
+          "server": "fakeip"
         }
       ],
       "independent_cache": true,
