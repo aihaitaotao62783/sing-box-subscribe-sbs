@@ -26,26 +26,25 @@
     "detour": "direct"
   },
     "dns": {
-      
-      "servers": [
-        {
-         "tag": "google",
-         "type": "tls",
-         "server": "8.8.8.8",
-         "detour": "Proxy"
-        },
-        { 
+  "servers": [
+      {
+        "tag": "google",
+        "type": "tls",
+        "server": "8.8.8.8",
+        "detour": "Proxy"
+      },
+      {
         "tag": "local",
         "type": "https",
-        "server": "233.5.5.5",
+        "server": "223.5.5.5",
         "detour": "direct"
-        },
-        {
+      },
+      {
         "tag": "fakeip",
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
         "inet6_range": "fc00::/18"
-        }
+     }
       ],
       "rules": [
       {
