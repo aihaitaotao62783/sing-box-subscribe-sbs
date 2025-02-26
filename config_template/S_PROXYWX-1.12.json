@@ -29,8 +29,8 @@
   "servers": [
       {
         "tag": "google",
-        "type": "udp",
-        "server": "8.8.8.8",
+        "type": "https",
+        "server": "120.53.53.53",
         "detour": "Proxy"
       },
       {
