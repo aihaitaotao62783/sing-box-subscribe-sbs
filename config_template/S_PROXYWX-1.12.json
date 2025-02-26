@@ -29,7 +29,7 @@
   "servers": [
       {
         "tag": "google",
-        "type": "tls",
+        "type": "udp",
         "server": "8.8.8.8",
         "detour": "Proxy"
       },
