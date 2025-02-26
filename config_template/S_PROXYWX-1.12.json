@@ -30,7 +30,7 @@
       {
         "tag": "google",
         "type": "https",
-        "server": "120.53.53.53",
+        "server": "8.8.8.8",
         "detour": "Proxy"
       },
       {
@@ -124,8 +124,8 @@
       "tag":"Proxy",
       "type":"selector",
       "outbounds":[
-        "China",
         "direct",
+        "China",
         "Googles",
           "autos-com",
 "auto-com",
