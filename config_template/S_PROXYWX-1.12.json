@@ -44,7 +44,10 @@
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
         "inet6_range": "fc00::/18"
-     }
+     },
+     {
+        "type": "local"
+      }
       ],
       "rules": [
       {
@@ -328,7 +331,8 @@
     ],
     "route": {
        "default_domain_resolver": {
-      "server": "local"
+      "server": "local",
+      "client_subnet": "1.1.1.1"
     },
       "auto_detect_interface": true,
       "final": "Proxy",
