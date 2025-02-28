@@ -28,9 +28,6 @@
     "dns": {
       
       "servers": [
-         {
-         "type": "local"
-         },
         {
          "tag": "google",
          "type": "https",
@@ -69,7 +66,7 @@
         "action": "route",
         "rule_set": "geosite-cn",
         "server": "fakeip",
-        "rewrite_ttl": 60
+        "rewrite_ttl": 1
       },
       {
         "rule_set": "geosite-cn",
