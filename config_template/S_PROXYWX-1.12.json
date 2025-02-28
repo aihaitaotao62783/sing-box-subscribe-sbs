@@ -27,9 +27,6 @@
   },
     "dns": {
   "servers": [
-       {
-        "type": "local"
-      },
       {
         "tag": "google",
         "type": "https",
@@ -95,7 +92,7 @@
         }
       ],
       "independent_cache": true,
-      "strategy": "prefer_ipv6"
+      "strategy": "prefer_ipv4"
     },
     "inbounds": [
       {
@@ -332,8 +329,7 @@
     ],
     "route": {
        "default_domain_resolver": {
-      "server": "local",
-      "client_subnet": "1.1.1.1"
+      "server": "local"
     },
       "auto_detect_interface": true,
       "final": "Proxy",
