@@ -28,6 +28,9 @@
     "dns": {
       
       "servers": [
+         {
+         "type": "local"
+         },
         {
          "tag": "google",
          "type": "https",
@@ -66,7 +69,7 @@
         "action": "route",
         "rule_set": "geosite-cn",
         "server": "fakeip",
-        "rewrite_ttl": 1
+        "rewrite_ttl": 60
       },
       {
         "rule_set": "geosite-cn",
@@ -97,7 +100,7 @@
         }
       ],
       "independent_cache": true,
-      "strategy": "prefer_ipv6"
+      "strategy": "prefer_ipv4"
     },
     "inbounds": [
       {
@@ -334,7 +337,9 @@
     ],
     "route": {
        "default_domain_resolver": {
-      "server": "local"
+      "server": "local",
+     "rewrite_tll": 60,
+      "client_subnet": "1.1.1.1"
     },
       "auto_detect_interface": true,
       "final": "Proxy",
