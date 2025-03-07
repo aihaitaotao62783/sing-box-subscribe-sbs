@@ -65,8 +65,7 @@
         ],
         "action": "route",
         "rule_set": "geosite-cn",
-        "server": "fakeip",
-        "rewrite_ttl": 1
+        "server": "fakeip"
       },
       {
         "rule_set": "geosite-cn",
@@ -93,7 +92,11 @@
             "A",
             "AAAA"
           ],
-          "server": "fakeip"
+         "action": "route",
+          "server": "fakeip",
+          "route_options": {
+          "strategy": "prefer_ipv4" 
+          }
         }
       ],
       "independent_cache": true,
@@ -344,14 +347,10 @@
         {
           "inbound": ["tun-in", "mixed-in"],
           "action": "sniff",
-          "sniffer": [
-          "http",
-          "tls",
-          "quic",
-          "dns"
-        ],
-        "timeout": "500ms"
+          "sniffer": ["http", "tls", "quic", "dns"],
+         "timeout": "500ms"
         },
+          
         {
           "type": "logical",
           "mode": "or",
