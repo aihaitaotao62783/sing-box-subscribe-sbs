@@ -93,10 +93,7 @@
             "AAAA"
           ],
          "action": "route",
-          "server": "fakeip",
-          "route_options": {
-          "strategy": "prefer_ipv4" 
-          }
+          "server": "fakeip"
         }
       ],
       "independent_cache": true,
