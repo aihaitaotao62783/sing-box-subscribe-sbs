@@ -411,7 +411,7 @@
             "d.metacubex.one",
             "board.zash.run.place"
           ],
-          "outbound": "Proxy"
+          "outbound": "direct"
         },
 
 
