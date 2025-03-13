@@ -173,7 +173,7 @@
         "{all}"
       ], 
         "filter":[
-        {"action":"include","keywords":["镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP"]}
+        {"action":"include","keywords":["镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|联通"]}
       ],
         "default": "direct"
     },
