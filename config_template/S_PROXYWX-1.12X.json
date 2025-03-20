@@ -313,23 +313,16 @@
          "rules": [
             {"clash_mode": "reject"},
             {"rule_set": [
-                            "geosite-category-ads-all",
-                            "adrules_domainset",
-                            "ACL4SSR-BanAD",
-                            "ACL4SSR-BanADCompany",
-                            "ACL4SSR-BanProgramAD",
-                            "adblock_reject",
-                            "AWAvenue-Ads-Rule-Singbox",
-                            "ACL4SSR-BanEasyListChina"
+                            "geosite-category-ads-all"
                         ]
                     }
                 ],
                 "action": "reject"
             },
-          {
+      {
         "rule_set": "geosite-category-ads-all",
         "clash_mode": "rule",
-        "action": "reject"
+        "outbound": "Proxy"
       },
       {
         "rule_set": "geosite-category-ads-all",
@@ -393,20 +386,6 @@
       },
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {
         "rule_set": "geosite-geolocation-!cn",
         "outbound": "Global"
@@ -431,10 +410,6 @@
         "download_detour": "direct",
 "update_interval": "1d"
       },
-
-
-
-
 
       {
         "tag": "geosite-private",
@@ -463,13 +438,6 @@
       },
 
 
-
-
-
-
-
-
-
         {
         "tag": "geoip-cn",
         "type": "remote",
@@ -490,13 +458,6 @@
       },
 
 
-
-
-
-
-
-
-
       {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
@@ -506,68 +467,6 @@
 "update_interval": "1d"
       },
 
-   {
-        "tag": "ACL4SSR-BanAD",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanAD.srs",
-        "download_detour": "direct",
-"update_interval": "1d"
-      },
-  {
-        "tag": "ACL4SSR-BanADCompany",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanADCompany.srs",
-        "download_detour": "direct",
-"update_interval": "1d"
-      },
-
-  
-
-  {
-        "tag": "ACL4SSR-BanProgramAD",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanProgramAD.srs",
-        "download_detour": "direct",
-"update_interval": "1d"
-      },
-
-  {
-        "tag": "ACL4SSR-BanEasyListChina",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanEasyListChina.srs",
-        "download_detour": "direct",
-"update_interval": "1d"
-      },
-
-       {
-        "tag": "adblock_reject",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.srs",
-        "download_detour": "direct",
-"update_interval": "1d"
-      },
-{
-  "tag": "adrules_domainset",
-  "type": "remote",
-  "format": "binary",
-  "url": "https://ghfast.top/https://github.com/aihaitaotao62783/sing-box-geosite-sbs/raw/main/rule/adrules_domainset.srs",
- "download_detour": "direct",
-"update_interval": "1d"
-},
-
- {
-       "tag": "AWAvenue-Ads-Rule-Singbox",
-       "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
-     "download_detour": "direct",
-     "update_interval": "1d"
-},
 
 
       {
