@@ -121,6 +121,10 @@
       }
     ],
    "outbounds": [
+      {
+        "type": "direct",
+        "tag": "direct"
+      },
        {
       "tag":"Proxy",
       "type":"selector",
@@ -246,16 +250,7 @@
          "Googles"
       ],
       "default": "Googles"
-    },
-
-
-
-
-
-      {
-        "type": "direct",
-        "tag": "direct"
-      }
+    }
 
     ],
     "route": {
