@@ -36,8 +36,7 @@
       {
         "tag": "local",
         "type": "https",
-        "server": "223.5.5.5",
-        "detour": "direct"
+        "server": "223.5.5.5"
       },
       {
         "tag": "fakeip",
@@ -121,10 +120,6 @@
       }
     ],
    "outbounds": [
-      {
-        "type": "direct",
-        "tag": "direct"
-      },
        {
       "tag":"Proxy",
       "type":"selector",
@@ -250,7 +245,11 @@
          "Googles"
       ],
       "default": "Googles"
-    }
+    },     
+   {
+        "type": "direct",
+        "tag": "direct"
+      }
 
     ],
     "route": {
