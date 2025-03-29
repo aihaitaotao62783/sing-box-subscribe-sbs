@@ -408,10 +408,15 @@
             "yacd.metacubex.one",
             "yacd.haishan.me",
             "d.metacubex.one",
-            "board.zash.run.place",
-            "flow2.ggff.net"
+            "board.zash.run.place"
           ],
           "outbound": "direct"
+        },
+       {
+          "domain": [
+            "flow2.ggff.net"
+          ],
+          "outbound": "China"
         },
 
 
