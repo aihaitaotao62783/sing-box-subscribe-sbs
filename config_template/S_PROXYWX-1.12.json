@@ -285,7 +285,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|济南联通|河南-VIP|北京-VIP"]}
+        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|济南联通|河南-VIP|北京-VIP|河南-进阶专属|南京-进阶专属"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "30m",
