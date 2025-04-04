@@ -162,7 +162,32 @@
       ],
       "default": "direct"
     },
-
+    {
+      "tag":"Wechat and Some",
+      "type":"selector",
+      "outbounds":[
+        "direct",   
+        "China",
+        "{all}"
+      ], 
+        "filter":[
+        {"action":"include","keywords":["镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|联通"]}
+      ],
+        "default": "direct"
+    },
+                {
+      "tag":"Dingtalk",
+      "type":"selector",
+      "outbounds":[
+        "direct",   
+        "China",
+        "{all}"
+      ], 
+        "filter":[
+        {"action":"include","keywords":["镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|联通"]}
+      ],
+        "default": "direct"
+    },
       
 
      {
@@ -429,7 +454,16 @@
         "outbound": "China"
       },
 
+      {
+        "rule_set": ["geosite-WeChat"],
+        "outbound": "Wechat and Some"
+      },
+            {
+        "rule_set": ["geosite-dingtalk"],
+        "outbound": "Dingtalk"
+      },
 
+        
 
 
 
@@ -588,6 +622,25 @@
         "download_detour": "direct",
 "update_interval": "1d"
       },
+ {
+  "tag": "geosite-dingtalk",
+  "type": "remote",
+  "format": "binary",
+  "url": "https://ghfast.top/https://github.com/2dust/sing-box-rules/raw/rule-set-geosite/geosite-dingtalk.srs",
+ "download_detour": "direct",
+"update_interval": "1d"
+},
+{
+  "tag": "geosite-WeChat",
+  "type": "remote",
+  "format": "binary",
+  "url": "https://ghfast.top/https://github.com/aihaitaotao62783/sing-box-geosite-sbs/raw/main/rule/WeChat.srs",
+ "download_detour": "direct",
+"update_interval": "1d"
+},
+
+
+          
 {
   "tag": "adrules_domainset",
   "type": "remote",
