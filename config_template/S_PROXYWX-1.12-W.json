@@ -162,7 +162,7 @@
       ],
       "default": "direct"
     },
-    {
+           {
       "tag":"Wechat and Some",
       "type":"selector",
       "outbounds":[
@@ -171,7 +171,7 @@
         "{all}"
       ], 
         "filter":[
-        {"action":"include","keywords":["镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|联通"]}
+        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|河南-进阶专属|南京-进阶专属"]}  
       ],
         "default": "direct"
     },
@@ -184,7 +184,7 @@
         "{all}"
       ], 
         "filter":[
-        {"action":"include","keywords":["镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|联通"]}
+        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|河南-进阶专属|南京-进阶专属|济南联通"]}
       ],
         "default": "direct"
     },
