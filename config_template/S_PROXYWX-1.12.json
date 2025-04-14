@@ -363,15 +363,27 @@
           ],
           "action": "hijack-dns"
         },
+{
+          "type": "logical",
+          "mode": "or",
+         "rules": [
+     {
+          "package_name": [
+          "ccom.bankcomm.Bankcomm",
+          "com.eg.android.AlipayGphone",
+          "com.taobao.taobao"
+]
+      }
+        ],
+       "outbound": "Bank"
+      },
    {
           "type": "logical",
           "mode": "or",
          "rules": [
      {
           "package_name": [
-          "com.tencent.mm",
-          "com.eg.android.AlipayGphone",
-          "com.taobao.taobao"
+          "com.tencent.mm"
 ]
       }
         ],
