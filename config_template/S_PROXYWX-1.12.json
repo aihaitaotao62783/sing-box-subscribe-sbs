@@ -441,7 +441,7 @@
           "domain": [
             "flow2.ggff.net"
           ],
-          "outbound": "China"
+          "outbound": "direct"
         },
 
       {
@@ -449,7 +449,7 @@
 
           "ggff.net"
         ],
-        "outbound": "China"
+        "outbound": "direct"
       },
 
 
