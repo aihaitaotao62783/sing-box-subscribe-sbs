@@ -444,7 +444,13 @@
           "outbound": "China"
         },
 
+      {
+        "domain_suffix": [
 
+          "ggff.net"
+        ],
+        "outbound": "China"
+      },
 
 
 
