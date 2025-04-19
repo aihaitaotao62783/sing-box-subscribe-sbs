@@ -171,7 +171,7 @@
         "{all}"
       ], 
         "filter":[
-        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|河南-进阶专属|南京-进阶专属"]}  
+        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|河南-进阶专属|南京-进阶专属|河北-进阶专属"]}  
       ],
         "default": "direct"
     },
@@ -184,7 +184,7 @@
         "{all}"
       ], 
         "filter":[
-        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|河南-进阶专属|南京-进阶专属|济南联通"]}
+        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|河南-进阶专属|南京-进阶专属|济南联通|河北-进阶专属"]}
       ],
         "default": "direct"
     },
@@ -298,7 +298,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|济南联通|河南-VIP|北京-VIP|河南-进阶专属|南京-进阶专属"]}
+        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|济南联通|河南-VIP|北京-VIP|河南-进阶专属|南京-进阶专属|河北-进阶专属"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "30m",
@@ -363,7 +363,37 @@
           ],
           "action": "hijack-dns"
         },
- 
+    {
+      "type": "logical",
+      "mode": "or",
+      "rules": [
+               {
+                "process_name": [
+                "DingTalk.exe"
+                 ]
+              }
+              ],
+         "outbound": "Dingtalk"
+   },
+{
+      "type": "logical",
+      "mode": "or",
+      "rules": [
+               {
+                "process_name": [
+                "WeChat.exe",
+                "WeChatUtility.exe",
+                "WeChatPlayer.exe",
+                "WeChatAppEx.exe",
+                "WeChatOCR.exe",
+                "mmcrashpad_handler64.exe",
+                "WechatAppLauncher.exe",
+                "TxBugReport.exe"
+                 ]
+              }
+              ],
+         "outbound": "Wechat and Some"
+   },
 
 
 
