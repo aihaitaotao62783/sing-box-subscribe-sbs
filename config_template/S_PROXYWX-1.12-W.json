@@ -518,7 +518,7 @@
 
       {
         "rule_set": ["geosite-youtube", "geoip-google", "geosite-google", "geosite-github"],
-        "outbound": "Google"
+        "outbound": "Googles"
       },
 
         {
