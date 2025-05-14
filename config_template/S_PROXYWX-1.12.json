@@ -199,8 +199,32 @@
       ],
       "default": "auto-com"
     },
-
-
+  {
+      "tag":"OpenAI",
+      "type":"selector",
+      "outbounds":[
+      "autos-com",
+      "auto-com",
+       "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道|IPLC"]}
+      ],
+      "default": "autos-com"
+    },
+   {
+      "tag":"Telegram",
+      "type":"selector",
+      "outbounds":[
+      "autos-com",
+      "auto-com",
+       "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道|IPLC"]}
+      ],
+      "default": "autos-com"
+    },
 
 
      {
@@ -468,11 +492,18 @@
         "rule_set": "geosite-category-bank-cn",
         "outbound": "Bank"
       },
+     {
+        "rule_set": "geosite-openai",
+        "outbound": "OpenAI"
+      },
+    {
+        "rule_set": ["geoip-telegram", "geosite-telegram"],
+        "outbound": "Telegram"
+      },
 
-
-{
-        "rule_set": ["geoip-google", "geosite-google"],
-        "outbound": "Googles"
+      {
+        "rule_set": ["geosite-youtube", "geoip-google", "geosite-google", "geosite-github"],
+        "outbound": "Google"
       },
 
         {
@@ -542,6 +573,20 @@
         "download_detour": "direct",
 "update_interval": "1d"
       },
+      {
+        "tag": "geosite-openai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/Toperlock/sing-box-geosite@main/rule/OpenAI.srs",
+        "download_detour": "direct"
+      },
+     {
+        "tag": "geosite-youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
+        "download_detour": "direct"
+      },
 
   {
         "tag": "geoip-google",
@@ -559,7 +604,27 @@
         "download_detour": "direct",
 "update_interval": "1d"
       },
-
+    {
+        "tag": "geosite-github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
+        "download_detour": "direct"
+      },
+          {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.srs",
+        "download_detour": "direct"
+      },
 
 
 
