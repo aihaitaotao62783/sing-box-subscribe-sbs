@@ -8,7 +8,7 @@
         "external_controller": "127.0.0.1:9090",
         "external_ui": "ui",
         "secret": "",
-        "external_ui_download_url": "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+        "external_ui_download_url": "https://ghfast.top/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
         "external_ui_download_detour": "direct",
         "default_mode": "rule"
       },
@@ -199,7 +199,32 @@
       ],
       "default": "auto-com"
     },
-
+ {
+      "tag":"OpenAI",
+      "type":"selector",
+      "outbounds":[
+      "autos-com",
+      "auto-com",
+       "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道|IPLC"]}
+      ],
+      "default": "autos-com"
+    },
+   {
+      "tag":"Telegram",
+      "type":"selector",
+      "outbounds":[
+      "autos-com",
+      "auto-com",
+       "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道|IPLC"]}
+      ],
+      "default": "autos-com"
+    },
 
 
 
@@ -346,24 +371,7 @@
       "auto_detect_interface": true,
       "final": "Proxy",
       "rules": [
-        {
-          "inbound": ["tun-in", "mixed-in"],
-          "action": "sniff"
-        },
-        {
-          "type": "logical",
-          "mode": "or",
-          "rules":[
-            {
-              "port":53
-            },
-            {
-              "protocol": "dns"
-            }
-          ],
-          "action": "hijack-dns"
-        },
-    {
+           {
       "type": "logical",
       "mode": "or",
       "rules": [
@@ -394,6 +402,33 @@
               ],
          "outbound": "Wechat and Some"
    },
+
+    {
+        "rule_set": ["geosite-WeChat"],
+        "outbound": "Wechat and Some"
+      },
+            {
+        "rule_set": ["geosite-dingtalk"],
+        "outbound": "Dingtalk"
+      },
+        {
+          "inbound": ["tun-in", "mixed-in"],
+          "action": "sniff"
+        },
+        {
+          "type": "logical",
+          "mode": "or",
+          "rules":[
+            {
+              "port":53
+            },
+            {
+              "protocol": "dns"
+            }
+          ],
+          "action": "hijack-dns"
+        },
+  
 
 
 
@@ -472,39 +507,25 @@
         "rule_set": "geosite-category-bank-cn",
         "outbound": "Bank"
       },
+  {
+        "rule_set": "geosite-openai",
+        "outbound": "OpenAI"
+      },
+    {
+        "rule_set": ["geoip-telegram", "geosite-telegram"],
+        "outbound": "Telegram"
+      },
 
-
-{
-        "rule_set": ["geoip-google", "geosite-google"],
-        "outbound": "Googles"
+      {
+        "rule_set": ["geosite-youtube", "geoip-google", "geosite-google", "geosite-github"],
+        "outbound": "Google"
       },
 
         {
         "rule_set": ["geoip-cn", "geosite-cn"],
         "outbound": "China"
       },
-
-      {
-        "rule_set": ["geosite-WeChat"],
-        "outbound": "Wechat and Some"
-      },
-            {
-        "rule_set": ["geosite-dingtalk"],
-        "outbound": "Dingtalk"
-      },
-
         
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -545,6 +566,22 @@
         "download_detour": "direct",
 "update_interval": "1d"
       },
+   {
+        "tag": "geosite-openai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://ghfast.top/https://github.com/aihaitaotao62783/sing-box-geosite-sbs/raw/main/rule/OpenAI.srs",
+        "download_detour": "direct",
+"update_interval": "1d"
+      },
+     {
+        "tag": "geosite-youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
+        "download_detour": "direct",
+"update_interval": "1d"
+      },
 
   {
         "tag": "geoip-google",
@@ -562,15 +599,30 @@
         "download_detour": "direct",
 "update_interval": "1d"
       },
-
-
-
-
-
-
-
-
-
+    {
+        "tag": "geosite-github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
+        "download_detour": "direct",
+"update_interval": "1d"
+      },
+          {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
+        "download_detour": "direct",
+"update_interval": "1d"
+      },
+      {
+        "tag": "geosite-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
+        "download_detour": "direct",
+"update_interval": "1d"
+      },
         {
         "tag": "geoip-cn",
         "type": "remote",
