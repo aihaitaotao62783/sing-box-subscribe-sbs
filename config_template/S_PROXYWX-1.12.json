@@ -172,7 +172,7 @@
         "{all}"
       ], 
         "filter":[
-        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|河南-进阶专属|南京-进阶专属|河北-进阶专属|河北-VIP|KNC河南|KNC湖北|KNC河北|KNC北京"]}  
+        {"action":"include","keywords":["徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|宿迁-VIP|山东-VIP|河南-VIP|北京|湖北-VIP|河南-进阶专属|南京-进阶专属|河北-进阶专属|河北-VIP|KCN河南|KCN湖北|KCN河北|KCN北京"]}  
       ],
         "default": "direct"
     },
