@@ -353,9 +353,9 @@
        {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "120m",
-      "tolerance": 50,
-"idle_timeout": "120m"
+      "interval": "60m",
+      "tolerance": 10,
+"idle_timeout": "60m"
     }, 
       {
         "type": "direct",
