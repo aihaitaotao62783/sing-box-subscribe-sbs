@@ -9,7 +9,7 @@
         "external_ui": "ui",
         "secret": "",
         "external_ui_download_url": "https://hubproxy.sky-moon.top:2053/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-        "external_ui_download_detour": "Proxy",
+        "external_ui_download_detour": "direct",
         "default_mode": "rule"
       },
     "cache_file": {
@@ -459,14 +459,14 @@
             "d.metacubex.one",
             "board.zash.run.place"
           ],
-          "outbound": "Proxy"
+          "outbound": "direct"
         },
       {
         "domain_suffix": [
 
           "ggff.net"
         ],
-        "outbound": "Proxy"
+        "outbound": "direct"
       },
 
 
@@ -557,7 +557,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://hubproxy.sky-moon.top:2053/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-bank-cn.srs",
-        "download_detour": "Proxy",
+        "download_detour": "direct",
 "update_interval": "1d"
       },
 
@@ -570,7 +570,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://hubproxy.sky-moon.top:2053/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs",
-        "download_detour": "Proxy",
+        "download_detour": "direct",
 "update_interval": "1d"
       },
       {
@@ -578,7 +578,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://hubproxy.sky-moon.top:2053/https://github.com/aihaitaotao62783/sing-box-geosite-sbs/raw/main/rule/OpenAI.srs",
-        "download_detour": "Proxy",
+        "download_detour": "direct",
 "update_interval": "1d"
       },
      {
@@ -586,7 +586,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://hubproxy.sky-moon.top:2053/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
-        "download_detour": "Proxy",
+        "download_detour": "direct",
 "update_interval": "1d"
       },
 
@@ -595,7 +595,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://hubproxy.sky-moon.top:2053/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
-        "download_detour": "Proxy",
+        "download_detour": "direct",
 "update_interval": "1d"
       },
       {
@@ -603,7 +603,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://hubproxy.sky-moon.top:2053/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
-        "download_detour": "Proxy",
+        "download_detour": "direct",
 "update_interval": "1d"
       },
     {
@@ -611,7 +611,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://hubproxy.sky-moon.top:2053/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
-        "download_detour": "Proxy",
+        "download_detour": "direct",
 "update_interval": "1d"
       },
           {
@@ -619,7 +619,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://hubproxy.sky-moon.top:2053/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
-        "download_detour": "Proxy",
+        "download_detour": "direct",
 "update_interval": "1d"
       },
       {
@@ -627,7 +627,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://hubproxy.sky-moon.top:2053/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
-        "download_detour": "Proxy",
+        "download_detour": "direct",
 "update_interval": "1d"
       },
 
