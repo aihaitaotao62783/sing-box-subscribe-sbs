@@ -91,7 +91,7 @@
         }
       ],
       "independent_cache": true,
-      "strategy": "ipv4_only"
+      "strategy": "prefer_ipv4"
     },
     "inbounds": [
       {
