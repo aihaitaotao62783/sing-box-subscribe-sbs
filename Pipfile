@@ -2,9 +2,16 @@
 url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
- 
+
 [packages]
-flask = "*"
- 
+flask = "==2.3.2"
+requests = "*"
+paramiko = "*"
+scp = "*"
+chardet = "*"
+pyyaml = "*"
+"ruamel.yaml" = "*"
+cryptography = "*"
+
 [requires]
 python_version = "3.12"
