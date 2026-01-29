@@ -81,7 +81,7 @@
   ],
   "route": {
        "default_domain_resolver": {
-      "server": "local"
+      "server": "google"
     },
     "auto_detect_interface": true,
     "final": "Proxy",
