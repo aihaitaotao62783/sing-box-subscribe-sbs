@@ -3,39 +3,39 @@
     "level": "info",
     "timestamp": true
   },
-  "experimental": {
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "ui",
-      "default_mode": "global"
-    },
-    "cache_file": {
-      "enabled": true,
-      "store_fakeip": false
-    }
-  },
   "dns": {
     "servers": [
       {
-        "tag": "remote",
+        "tag": "dns-remote",
         "type": "https",
         "server": "8.8.8.8",
-        "detour": "Proxy"
+        "detour": "Global-Select"
       },
       {
-        "tag": "local",
-        "type": "udp",
+        "tag": "dns-local",
+        "type": "https",
         "server": "223.5.5.5",
-        "detour": "direct" 
+        "detour": "direct"
+      },
+      {
+        "tag": "fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15"
       }
     ],
     "rules": [
       {
         "outbound": "any",
-        "server": "local"
+        "server": "dns-local"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
       }
     ],
-    "final": "remote",
     "strategy": "prefer_ipv4"
   },
   "inbounds": [
@@ -48,18 +48,24 @@
       ],
       "stack": "system",
       "auto_route": true,
-      "strict_route": true,
-      "sniff": true
+      "strict_route": true
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
     }
   ],
   "outbounds": [
     {
-      "tag": "Proxy",
+      "tag": "Global-Select",
       "type": "selector",
       "outbounds": [
-        "{all}",
-        "direct"
-      ]
+        "direct",
+        "{all}"
+      ],
+      "default": "direct"
     },
     {
       "tag": "direct",
@@ -71,14 +77,18 @@
     }
   ],
   "route": {
-    "auto_detect_interface": true,
     "default_domain_resolver": {
-      "server": "local"
+      "server": "dns-local"
     },
-    "final": "Proxy",
+    "auto_detect_interface": true,
+    "final": "Global-Select",
     "rules": [
       {
         "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "port": 53,
         "action": "hijack-dns"
       },
       {
