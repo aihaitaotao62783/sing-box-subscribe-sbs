@@ -7,70 +7,41 @@
     "clash_api": {
       "external_controller": "127.0.0.1:9090",
       "external_ui": "ui",
-      "secret": "",
-      "external_ui_download_url": "https://hubproxy.sky-moon.top:2053/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
       "default_mode": "global"
     },
     "cache_file": {
-      "enabled": true,
-      "store_fakeip": true,
-      "store_rdrc": true
+      "enabled": true
     }
   },
   "dns": {
     "servers": [
       {
-        "tag": "google",
+        "tag": "remote",
         "type": "https",
         "server": "8.8.8.8",
         "detour": "Proxy"
       },
       {
-        "tag": "fakeip",
-        "type": "fakeip",
-        "inet4_range": "198.18.0.0/15",
-        "inet6_range": "fc00::/18"
+        "tag": "local",
+        "type": "https",
+        "server": "223.5.5.5",
+        "detour": "direct" // 关键：本地 DNS 必须直连
       }
     ],
     "rules": [
       {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip"
+        "outbound": "any", // 基础解析（如解析机场地址）强制走 local
+        "server": "local"
       }
     ],
-    "final": "google",
+    "final": "remote",
     "strategy": "prefer_ipv4"
   },
-  "inbounds": [
-    {
-      "tag": "tun-in",
-      "type": "tun",
-      "address": [
-        "172.19.0.0/30",
-        "fdfe:dcba:9876::0/126"
-      ],
-      "stack": "system",
-      "auto_route": true,
-      "strict_route": true
-    },
-    {
-      "tag": "mixed-in",
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 7890
-    }
-  ],
   "outbounds": [
     {
       "tag": "Proxy",
       "type": "selector",
-      "outbounds": [
-        "{all}",
-        "direct"
-      ]
+      "outbounds": ["{all}", "direct"]
     },
     {
       "type": "direct",
@@ -78,10 +49,10 @@
     }
   ],
   "route": {
-    "default_domain_resolver": {
-      "server": "google"
-    },
     "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "local" // 解决“节点不通”的关键：用本地 DNS 解析节点 IP
+    },
     "final": "Proxy",
     "rules": [
       {
@@ -91,14 +62,6 @@
       {
         "ip_is_private": true,
         "outbound": "direct"
-      },
-      {
-        "clash_mode": "direct",
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "global",
-        "outbound": "Proxy"
       }
     ]
   }
