@@ -19,6 +19,7 @@
   },
   "dns": {
     "servers": [
+        "servers": [
       {
         "tag": "google",
         "type": "https",
@@ -26,14 +27,25 @@
         "detour": "Proxy"
       },
       {
+        "tag": "local",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
         "tag": "fakeip",
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
         "inet6_range": "fc00::/18"
-      }
-    ],
-    "rules": [
+     }
+
+      ],
+      "rules": [
       {
+        "clash_mode": "direct",
+        "server": "local"
+      },
+      {
+        "clash_mode": "global",
         "server": "google"
       },
       {
