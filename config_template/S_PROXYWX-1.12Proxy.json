@@ -3,38 +3,38 @@
     "level": "info",
     "timestamp": true
   },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "ui",
+      "secret": "",
+      "external_ui_download_url": "https://hubproxy.sky-moon.top:2053/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "Proxy",
+      "default_mode": "global"
+    },
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": true
+    }
+  },
   "dns": {
     "servers": [
       {
-        "tag": "dns-remote",
+        "tag": "remote",
         "type": "https",
         "server": "8.8.8.8",
-        "detour": "Global-Select"
+        "detour": "Proxy"
       },
       {
-        "tag": "dns-local",
+        "tag": "local",
         "type": "https",
         "server": "223.5.5.5",
         "detour": "direct"
-      },
-      {
-        "tag": "fakeip",
-        "type": "fakeip",
-        "inet4_range": "198.18.0.0/15"
       }
     ],
     "rules": [
-      {
-        "outbound": "any",
-        "server": "dns-local"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip"
-      }
+      { "clash_mode": "global", "server": "remote" },
+      { "clash_mode": "direct", "server": "local" }
     ],
     "strategy": "prefer_ipv4"
   },
@@ -42,59 +42,54 @@
     {
       "tag": "tun-in",
       "type": "tun",
-      "address": [
-        "172.19.0.0/30",
-        "fdfe:dcba:9876::0/126"
-      ],
+      "address": ["172.19.0.0/30"],
       "stack": "system",
       "auto_route": true,
-      "strict_route": true
+      "strict_route": true,
+      "sniff": true
     },
     {
       "tag": "mixed-in",
       "type": "mixed",
       "listen": "127.0.0.1",
-      "listen_port": 7890
+      "listen_port": 7890,
+      "sniff": true
     }
   ],
   "outbounds": [
     {
-      "tag": "Global-Select",
+      "tag": "Proxy",
       "type": "selector",
-      "outbounds": [
-        "direct",
-        "{all}"
-      ],
-      "default": "direct"
+      "outbounds": ["Manual-Global", "Manual-China", "direct", "{all}"]
     },
     {
-      "tag": "direct",
-      "type": "direct"
+      "tag": "Manual-Global",
+      "type": "selector",
+      "outbounds": ["{all}"],
+      "filter": [
+        { "action": "include", "keywords": ["HK|TW|SG|JP|US|香港|台湾|新加坡|日本|美国"] }
+      ]
     },
     {
-      "tag": "dns-out",
-      "type": "dns"
-    }
+      "tag": "Manual-China",
+      "type": "selector",
+      "outbounds": ["{all}"],
+      "filter": [
+        { "action": "include", "keywords": ["CN|中国|国内|移动|联通|电信"] }
+      ]
+    },
+    { "type": "direct", "tag": "direct" }
   ],
   "route": {
-    "default_domain_resolver": {
-      "server": "dns-local"
-    },
     "auto_detect_interface": true,
-    "final": "Global-Select",
+    "default_domain_resolver": {
+      "server": "local"
+    },
     "rules": [
-      {
-        "protocol": "dns",
-        "action": "hijack-dns"
-      },
-      {
-        "port": 53,
-        "action": "hijack-dns"
-      },
-      {
-        "ip_is_private": true,
-        "outbound": "direct"
-      }
-    ]
+      { "protocol": "dns", "action": "hijack-dns" },
+      { "clash_mode": "direct", "outbound": "direct" },
+      { "clash_mode": "global", "outbound": "Proxy" }
+    ],
+    "final": "Proxy"
   }
 }
