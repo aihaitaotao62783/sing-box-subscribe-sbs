@@ -14,7 +14,8 @@
     },
     "cache_file": {
       "enabled": true,
-      "store_fakeip": true
+      "store_fakeip": true,
+      "store_rdrc": true
     }
   },
   "dns": {
@@ -28,21 +29,30 @@
       {
         "tag": "local",
         "type": "https",
-        "server": "223.5.5.5" 
-        // 删除了这里的 detour: direct
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
       }
     ],
     "rules": [
-      { "clash_mode": "global", "server": "remote" },
+      { "clash_mode": "global", "server": "fakeip" },
       { "clash_mode": "direct", "server": "local" }
     ],
-    "strategy": "prefer_ipv4"
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
   },
   "inbounds": [
     {
       "tag": "tun-in",
       "type": "tun",
-      "address": ["172.19.0.0/30"],
+      "address": [
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
+      ],
       "stack": "system",
       "auto_route": true,
       "strict_route": true,
@@ -60,14 +70,19 @@
     {
       "tag": "Proxy",
       "type": "selector",
-      "outbounds": ["Manual-Global", "Manual-China", "direct", "{all}"]
+      "outbounds": [
+        "Manual-Global",
+        "Manual-China",
+        "direct",
+        "{all}"
+      ]
     },
     {
       "tag": "Manual-Global",
       "type": "selector",
       "outbounds": ["{all}"],
       "filter": [
-        { "action": "include", "keywords": ["HK|TW|SG|JP|US|香港|台湾|新加坡|日本|美国"] }
+        { "action": "include", "keywords": ["HK|TW|SG|JP|US|香港|台湾|新加坡|日本|美国|Global|Proxy"] }
       ]
     },
     {
@@ -75,10 +90,13 @@
       "type": "selector",
       "outbounds": ["{all}"],
       "filter": [
-        { "action": "include", "keywords": ["CN|中国|国内|移动|联通|电信"] }
+        { "action": "include", "keywords": ["CN|中国|国内|移动|联通|电信|回国"] }
       ]
     },
-    { "type": "direct", "tag": "direct" }
+    {
+      "type": "direct",
+      "tag": "direct"
+    }
   ],
   "route": {
     "auto_detect_interface": true,
