@@ -8,9 +8,6 @@
       "external_controller": "127.0.0.1:9090",
       "external_ui": "ui",
       "default_mode": "global"
-    },
-    "cache_file": {
-      "enabled": true
     }
   },
   "dns": {
@@ -23,20 +20,37 @@
       },
       {
         "tag": "local",
-        "type": "https",
+        "type": "udp",
         "server": "223.5.5.5",
-        "detour": "direct" // 关键：本地 DNS 必须直连
+        "detour": "direct"
       }
     ],
     "rules": [
       {
-        "outbound": "any", // 基础解析（如解析机场地址）强制走 local
-        "server": "local"
+        "outbound": "any",
+        "server": "local" 
       }
     ],
     "final": "remote",
     "strategy": "prefer_ipv4"
   },
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": ["172.19.0.0/30", "fdfe:dcba:9876::0/126"],
+      "stack": "system",
+      "auto_route": true,
+      "strict_route": true,
+      "sniff": true
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
   "outbounds": [
     {
       "tag": "Proxy",
@@ -51,7 +65,7 @@
   "route": {
     "auto_detect_interface": true,
     "default_domain_resolver": {
-      "server": "local" // 解决“节点不通”的关键：用本地 DNS 解析节点 IP
+      "server": "local"
     },
     "final": "Proxy",
     "rules": [
@@ -61,6 +75,10 @@
       },
       {
         "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "direct",
         "outbound": "direct"
       }
     ]
