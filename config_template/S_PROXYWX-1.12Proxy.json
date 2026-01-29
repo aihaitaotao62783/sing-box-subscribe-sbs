@@ -9,7 +9,7 @@
       "external_ui": "ui",
       "secret": "",
       "external_ui_download_url": "https://hubproxy.sky-moon.top:2053/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "default_mode": "rule"
+      "default_mode": "global"
     },
     "cache_file": {
       "enabled": true,
@@ -19,7 +19,6 @@
   },
   "dns": {
     "servers": [
-        "servers": [
       {
         "tag": "google",
         "type": "https",
@@ -27,27 +26,13 @@
         "detour": "Proxy"
       },
       {
-        "tag": "local",
-        "type": "https",
-        "server": "223.5.5.5"
-      },
-      {
         "tag": "fakeip",
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
         "inet6_range": "fc00::/18"
-     }
-
-      ],
-      "rules": [
-      {
-        "clash_mode": "direct",
-        "server": "local"
-      },
-      {
-        "clash_mode": "global",
-        "server": "google"
-      },
+      }
+    ],
+    "rules": [
       {
         "query_type": [
           "A",
@@ -56,6 +41,7 @@
         "server": "fakeip"
       }
     ],
+    "final": "google",
     "strategy": "prefer_ipv4"
   },
   "inbounds": [
@@ -92,7 +78,7 @@
     }
   ],
   "route": {
-       "default_domain_resolver": {
+    "default_domain_resolver": {
       "server": "google"
     },
     "auto_detect_interface": true,
@@ -105,6 +91,14 @@
       {
         "ip_is_private": true,
         "outbound": "direct"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "Proxy"
       }
     ]
   }
