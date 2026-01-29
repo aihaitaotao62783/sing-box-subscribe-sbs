@@ -8,6 +8,10 @@
       "external_controller": "127.0.0.1:9090",
       "external_ui": "ui",
       "default_mode": "global"
+    },
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": false
     }
   },
   "dns": {
@@ -22,13 +26,13 @@
         "tag": "local",
         "type": "udp",
         "server": "223.5.5.5",
-        "detour": "direct"
+        "detour": "direct" 
       }
     ],
     "rules": [
       {
         "outbound": "any",
-        "server": "local" 
+        "server": "local"
       }
     ],
     "final": "remote",
@@ -38,28 +42,32 @@
     {
       "tag": "tun-in",
       "type": "tun",
-      "address": ["172.19.0.0/30", "fdfe:dcba:9876::0/126"],
+      "address": [
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
+      ],
       "stack": "system",
       "auto_route": true,
       "strict_route": true,
       "sniff": true
-    },
-    {
-      "tag": "mixed-in",
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 7890
     }
   ],
   "outbounds": [
     {
       "tag": "Proxy",
       "type": "selector",
-      "outbounds": ["{all}", "direct"]
+      "outbounds": [
+        "{all}",
+        "direct"
+      ]
     },
     {
-      "type": "direct",
-      "tag": "direct"
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "dns-out",
+      "type": "dns"
     }
   ],
   "route": {
@@ -75,10 +83,6 @@
       },
       {
         "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "direct",
         "outbound": "direct"
       }
     ]
