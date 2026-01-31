@@ -30,7 +30,7 @@
       {
         "tag": "google",
         "type": "https",
-        "server": "233.5.5.5",
+        "server": "8.8.8.8",
         "detour": "Proxy"
       },
       {
