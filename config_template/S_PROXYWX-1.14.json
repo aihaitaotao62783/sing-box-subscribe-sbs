@@ -46,56 +46,49 @@
      }
      
       ],
-"rules": [
-  {
-    "clash_mode": "direct",
-    "action": "route",
-    "server": "local"
-  },
-  {
-    "clash_mode": "global",
-    "action": "route",
-    "server": "google"
-  },
-
-  {
-    "action": "evaluate",
-    "server": "google"
-  },
-
-  {
-    "match_response": true,
-    "rule_set": "geosite-cn",
-    "action": "route",
-    "server": "local"
-  },
-
-  {
-    "match_response": true,
-    "type": "logical",
-    "mode": "and",
-    "rules": [
+  "rules": [
       {
-        "rule_set": "geosite-geolocation-!cn",
-        "invert": true
+        "clash_mode": "direct",
+        "server": "local"
       },
       {
-        "rule_set": "geoip-cn"
-      }
-    ],
-    "action": "route",
-    "server": "google",
-    "client_subnet": "114.114.114.114/24"
-  },
-
-  {
-    "query_type": [
-      "A",
-      "AAAA"
-    ],
-    "action": "route",
-    "server": "fakeip"
-  }
+        "clash_mode": "global",
+        "server": "google"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "rule_set": "geosite-cn",
+        "server": "fakeip"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "local"
+      },
+        {
+          "type": "logical",
+          "mode": "and",
+          "rules": [
+            {
+              "rule_set": "geosite-geolocation-!cn",
+              "invert": true
+            },
+            {
+              "rule_set": "geoip-cn"
+            }
+          ],
+          "server": "google",
+          "client_subnet": "114.114.114.114/24"
+        },
+        {
+          "query_type": [
+            "A",
+            "AAAA"
+          ],
+          "server": "fakeip"
+        }
 ],
       "strategy": "prefer_ipv4"
     },
