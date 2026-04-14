@@ -140,6 +140,7 @@
       "tag":"Googles",
       "type":"selector",
       "outbounds":[
+      "direct", 
        "{all}"
 
       ],
