@@ -140,14 +140,14 @@
       "tag":"Googles",
       "type":"selector",
       "outbounds":[
-      "direct", 
+     "auto-com",
        "{all}"
 
       ],
       "filter":[
         {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道|IPLC"]}
       ],
-      "default": "direct"
+      "default": "auto-com"
     },
 
   {
@@ -175,6 +175,20 @@
       ],
       "default": "Googles"
     },
+        {
+      "tag":"auto-com",
+      "type":"urltest",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+       {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇯🇵|JP|jp|日本|日|Japan|🇺🇸|US|us|美国|美|United States|韩国|Kr|UK|Korea|GER|英|隧道"]}
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "120m",
+      "tolerance": 50,
+"idle_timeout": "120m"
+    }, 
 
          {
         "type": "direct",
