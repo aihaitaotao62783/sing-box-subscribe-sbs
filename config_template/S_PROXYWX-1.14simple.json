@@ -125,6 +125,8 @@
       "outbounds":[
         "direct",
         "China",
+         "auto-cn",
+          "auto-com", 
         "Googles",
        "{all}"
 
@@ -155,12 +157,13 @@
       "type":"selector",
       "outbounds":[
 "direct",   
+ "auto-cn",
      "{all}"
       ],
       "filter":[
         {"action":"include","keywords":["联通|移动|电信|国内|CN"]}
       ],
-      "default": "direct"
+      "default": "auto-cn"
     },
 
 
@@ -174,6 +177,20 @@
          "Googles"
       ],
       "default": "Googles"
+    },
+        {
+      "tag":"auto-cn",
+      "type":"urltest",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["联通|电信|移动|国内|CN"]}
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "120m",
+      "tolerance": 50,
+"idle_timeout": "120m"
     },
         {
       "tag":"auto-com",
