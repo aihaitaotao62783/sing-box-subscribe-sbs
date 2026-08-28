@@ -10,7 +10,6 @@
       "external_ui": "ui",
       "secret": "",
       "external_ui_download_url": "https://hubproxy.sky-moon.top:2053/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
-      "external_ui_download_detour": "direct",
       "default_mode": "rule"
     },
 
@@ -20,6 +19,22 @@
       "store_dns": true
     }
   },
+
+  "services": [
+    {
+      "type": "api",
+      "listen": "127.0.0.1",
+      "listen_port": 9999,
+      "secret": "singbox",
+      "dashboard": {
+        "enabled": true,
+        "path": "dashboard",
+        "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip",
+        "http_client": "default",
+        "update_interval": "1d"
+      }
+    }
+  ],
 
   "ntp": {
     "enabled": true,
@@ -134,8 +149,7 @@
         "match_response": "ali-response",
         "rule_set": "geoip-cn",
         "ip_accept_any": true,
-        "action": "respond",
-        "race": true
+        "action": "respond"
       },
 
       {
@@ -464,6 +478,7 @@
       "tag": "default",
       "detour": "Proxy"
     },
+
     {
       "tag": "direct",
       "detour": "direct"
