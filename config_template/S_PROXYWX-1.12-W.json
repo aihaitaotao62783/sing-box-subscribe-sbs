@@ -180,13 +180,18 @@
       "tag": "tun-in",
       "type": "tun",
       "address": [
-        "172.19.0.0/30",
-        "fdfe:dcba:9876::0/126"
+        "172.19.0.0/30"
       ],
       "stack": "system",
       "auto_route": true,
-      "strict_route": true
+      "strict_route": false,
+      "route_exclude_address": [
+        "127.0.0.0/8",
+        "::1/128"
+      ]
     },
+
+
 
     {
       "tag": "mixed-in",
@@ -411,7 +416,7 @@
         {
           "action": "include",
           "keywords": [
-            "徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|济南联通|河南-VIP|北京-VIP|河南-进阶专属|南京-进阶专属|河北-进阶专属|河北-VIP"
+            "徐州移动 01|徐州移动 02|徐州移动 03|徐州移动 04|镇江联通|济南联通|河南-VIP|北京-VIP|河南-进阶专属|南京-进阶专属|河北-进阶专属|河北-VIP|北京"
           ]
         }
       ],
