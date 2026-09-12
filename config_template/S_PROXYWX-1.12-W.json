@@ -900,7 +900,7 @@
         "tag": "AWAvenue-Ads-Rule-Singbox",
         "type": "remote",
         "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
+        "url": "https://hubproxy.sky-moon.top:2053/https://github.com/aihaitaotao62783/AWAvenue-Ads-Rule-sbs/raw/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
         "download_detour": "direct",
         "update_interval": "1d"
       },
